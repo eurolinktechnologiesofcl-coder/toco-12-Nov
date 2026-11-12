@@ -95,7 +95,12 @@ a {
   transition: color 0.25s var(--ease);
 }
 
-img, svg, video {
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+svg:not(.ico):not([class*="ico"]):not([width]) {
   display: block;
   max-width: 100%;
   height: auto;
@@ -2690,14 +2695,22 @@ a.t-chip:hover { background: #EFF6FF; }
 /* ==========================================================================
    STANDARD LINE ICONS (inline SVG, Lucide-style) + header wordmark
    ========================================================================== */
-.ico {
-  width: 1em;
-  height: 1em;
-  display: inline-block;
-  vertical-align: -0.15em;
-  flex-shrink: 0;
+.ico,
+svg.ico {
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  vertical-align: -0.15em !important;
+  flex-shrink: 0 !important;
 }
-.ico-check { color: var(--blue-bright); margin-right: 4px; }
+.ico-check {
+  color: var(--blue-bright);
+  margin-right: 6px;
+  width: 16px !important;
+  height: 16px !important;
+}
 .theme-light .ico-check, .theme-alt .ico-check { color: var(--blue); }
 .theme-blue .ico-check { color: #FFFFFF; }
 

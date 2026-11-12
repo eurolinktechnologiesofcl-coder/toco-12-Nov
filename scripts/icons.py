@@ -85,9 +85,9 @@ EMOJI_MAP = {
 }
 
 
-def svg(name, cls="ico"):
+def svg(name, cls="ico", size=16):
     return (
-        f'<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+        f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         f'stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
         f'{ICONS[name]}</svg>'
     )

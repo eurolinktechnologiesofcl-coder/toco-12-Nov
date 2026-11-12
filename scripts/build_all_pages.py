@@ -1512,10 +1512,10 @@ def build_homepage():
                 <span>Explore Solutions</span>
               </a>
             </div>
-            <div style="display:flex;align-items:center;gap:20px;margin-top:28px;font-size:13px;color:var(--ink-3);">
-              <span>✓ Port Saeed, Dubai Office</span>
-              <span>✓ 30-Day Launch Warranty</span>
-              <span>✓ 100% Code Ownership</span>
+            <div style="display:flex;align-items:center;gap:20px;margin-top:28px;font-size:13px;color:var(--ink-3);flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:6px;">✓ Port Saeed, Dubai Office</span>
+              <span style="display:inline-flex;align-items:center;gap:6px;">✓ 30-Day Launch Warranty</span>
+              <span style="display:inline-flex;align-items:center;gap:6px;">✓ 100% Code Ownership</span>
             </div>
           </div>
 
