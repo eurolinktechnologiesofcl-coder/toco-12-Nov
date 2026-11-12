@@ -23,7 +23,8 @@ def render_header(active_nav=""):
   <header class="nav" id="main-nav">
     <div class="wrap">
       <a href="/" class="brand" aria-label="TOCO Technologies Homepage">
-        <img src="/assets/images/logo.webp" alt="TOCO Technologies Dubai" width="168" height="42" class="logo-img">
+        <img src="/assets/images/logo.webp" alt="TOCO Technologies logo" width="40" height="40" class="logo-img">
+        <span class="brand-text"><span class="brand-name">TOCO Technologies</span><span class="brand-sub">Dubai &bull; UAE</span></span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -118,31 +119,31 @@ def render_header(active_nav=""):
             <svg class="chev" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="dd-panel mega" role="menu" aria-label="Products Submenu">
-            <a href="/products/edutechy-elearning-platform" class="dd-item" role="menuitem">
+            <a href="/products/elearning-platform" class="dd-item" role="menuitem">
               <span class="mi">🎓</span>
               <div>
-                <b>Edutechy E-Learning <span class="tag-badge live">Live</span></b>
+                <b>E-Learning Platform <span class="tag-badge live">Live</span></b>
                 <small>Enterprise LMS platform &amp; training portal</small>
               </div>
             </a>
-            <a href="/products/adam-designs" class="dd-item" role="menuitem">
+            <a href="/products/interior-quote-automation" class="dd-item" role="menuitem">
               <span class="mi">📐</span>
               <div>
-                <b>Adam Designs <span class="tag-badge live">Live</span></b>
+                <b>Interior Quote Automation <span class="tag-badge live">Live</span></b>
                 <small>Interior quote &amp; sales automation platform</small>
               </div>
             </a>
-            <a href="/products/ai-conversions-erp" class="dd-item" role="menuitem">
+            <a href="/products/ai-erp-platform" class="dd-item" role="menuitem">
               <span class="mi">📊</span>
               <div>
-                <b>AI Conversions ERP <span class="tag-badge live">Live</span></b>
+                <b>AI-Powered ERP <span class="tag-badge live">Live</span></b>
                 <small>Intelligent operations &amp; deal conversion</small>
               </div>
             </a>
-            <a href="/products/comfity-payroll-automation" class="dd-item" role="menuitem">
+            <a href="/products/payroll-automation" class="dd-item" role="menuitem">
               <span class="mi">💼</span>
               <div>
-                <b>Comfity Payroll <span class="tag-badge live">Live</span></b>
+                <b>Payroll Automation <span class="tag-badge live">Live</span></b>
                 <small>Automated UAE payroll &amp; WPS compliance</small>
               </div>
             </a>
@@ -189,7 +190,8 @@ def render_header(active_nav=""):
   <aside class="mobile-menu" aria-label="Mobile Navigation">
     <div class="mobile-menu-head">
       <a href="/" class="brand">
-        <img src="/assets/images/logo.webp" alt="TOCO Technologies" width="140" height="35">
+        <img src="/assets/images/logo.webp" alt="TOCO Technologies logo" width="40" height="40" class="logo-img">
+        <span class="brand-text"><span class="brand-name">TOCO Technologies</span><span class="brand-sub">Dubai &bull; UAE</span></span>
       </a>
       <button class="mobile-close" type="button" aria-label="Close navigation menu">✕</button>
     </div>
@@ -223,10 +225,10 @@ def render_header(active_nav=""):
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
           <ul class="mobile-sub-list">
-            <li><a href="/products/edutechy-elearning-platform">🎓 Edutechy (E-Learning LMS)</a></li>
-            <li><a href="/products/adam-designs">📐 Adam Designs (Interior Quotes)</a></li>
-            <li><a href="/products/ai-conversions-erp">📊 AI Conversions: ERP</a></li>
-            <li><a href="/products/comfity-payroll-automation">💼 Comfity (Payroll &amp; WPS)</a></li>
+            <li><a href="/products/elearning-platform">🎓 E-Learning Platform</a></li>
+            <li><a href="/products/interior-quote-automation">📐 Interior Quote Automation</a></li>
+            <li><a href="/products/ai-erp-platform">📊 AI-Powered ERP</a></li>
+            <li><a href="/products/payroll-automation">💼 Payroll Automation (WPS)</a></li>
             <li><a href="/products/analytics-tracking">📉 Analytics Suite (Waitlist)</a></li>
             <li><a href="/products/real-estate-crm">🏙️ Real Estate CRM (Waitlist)</a></li>
           </ul>
@@ -256,7 +258,8 @@ def render_footer():
         <!-- Col 1: Brand & Contact -->
         <div class="foot-col brand-col">
           <a href="/" class="brand" aria-label="TOCO Technologies">
-            <img src="/assets/images/logo.webp" alt="TOCO Technologies Dubai" width="160" height="40" class="logo-img">
+            <img src="/assets/images/logo.webp" alt="TOCO Technologies logo" width="40" height="40" class="logo-img">
+        <span class="brand-text"><span class="brand-name">TOCO Technologies</span><span class="brand-sub">Dubai &bull; UAE</span></span>
           </a>
           <p class="foot-tagline">
             Engineering high-impact AI business automation, enterprise web &amp; mobile software, custom ERP platforms, and performance digital systems for businesses in Dubai and across the UAE.
@@ -302,10 +305,10 @@ def render_footer():
         <div class="foot-col">
           <h4>Our Products</h4>
           <ul class="foot-links">
-            <li><a href="/products/edutechy-elearning-platform">Edutechy E-Learning LMS</a></li>
-            <li><a href="/products/adam-designs">Adam Designs (Interior Quotes)</a></li>
-            <li><a href="/products/ai-conversions-erp">AI Conversions: ERP</a></li>
-            <li><a href="/products/comfity-payroll-automation">Comfity Payroll Automation</a></li>
+            <li><a href="/products/elearning-platform">E-Learning Platform</a></li>
+            <li><a href="/products/interior-quote-automation">Interior Quote Automation</a></li>
+            <li><a href="/products/ai-erp-platform">AI-Powered ERP</a></li>
+            <li><a href="/products/payroll-automation">Payroll Automation</a></li>
             <li><a href="/products/analytics-tracking">Analytics Suite <small>(Waitlist)</small></a></li>
             <li><a href="/products/real-estate-crm">Real Estate CRM <small>(Waitlist)</small></a></li>
             <li><a href="/products">All Products Hub</a></li>
@@ -561,7 +564,7 @@ def build_products_hub():
     url = "/products"
     canonical = f"{SITE_BASE}{url}"
     title = "Proprietary Software Platforms & Products | TOCO Technologies"
-    desc = "Explore proprietary software platforms engineered by TOCO Technologies in Dubai: Edutechy, Adam Designs, AI Conversions ERP, and Comfity Payroll."
+    desc = "Explore software products engineered by TOCO Technologies in Dubai: e-learning, interior quote automation, AI-powered ERP and UAE payroll automation."
     crumbs = [("Home", "/"), ("Products", "")]
 
     schema = {
@@ -853,7 +856,7 @@ def build_industries_page():
             "icon": "🎓",
             "title": "Higher Education, Academies & Corporate LMS",
             "desc": "Bilingual distance learning portals, DRM protected video streaming, automated grading, and cryptographic completion certificates.",
-            "points": ["Edutechy proprietary LMS suite", "10,000+ concurrent exam sessions", "Integrated UAE payment gateways"]
+            "points": ["Custom e-learning & LMS platforms", "10,000+ concurrent exam sessions", "Integrated UAE payment gateways"]
         },
         {
             "icon": "💼",
@@ -1185,7 +1188,7 @@ def build_contact_page():
                       <option value="Digital Marketing & PPC">Digital Marketing &amp; PPC</option>
                       <option value="Technical SEO">Technical SEO &amp; Search</option>
                       <option value="E-Commerce Development">E-Commerce Development</option>
-                      <option value="Edutechy / Products">Proprietary Software Products</option>
+                      <option value="Software Products">Proprietary Software Products</option>
                       <option value="Other Technology Requirement">Other Consultation</option>
                     </select>
                   </div>
@@ -1430,7 +1433,7 @@ def build_homepage():
             make_faq_schema([
                 {"q": "What services does TOCO Technologies offer in Dubai?", "a": "We provide end-to-end technology engineering including AI workflow automation, AI business conversions, mobile application software (iOS & Android), custom web development, bespoke ERP platforms, performance digital marketing, and technical SEO."},
                 {"q": "Where is TOCO Technologies located in the UAE?", "a": "Our corporate headquarters is located in Port Saeed, Deira, Dubai, UAE. We serve commercial clients across Dubai, Abu Dhabi, Sharjah, and the wider Arabian Gulf region."},
-                {"q": "What proprietary software products has TOCO Technologies built?", "a": "We have engineered proprietary platforms including Edutechy (Enterprise E-Learning LMS), Adam Designs (Interior quote & sales automation), AI Conversions: ERP (operational enterprise software), and Comfity (UAE WPS payroll automation), alongside upcoming Analytics and Real Estate CRM suites."},
+                {"q": "What proprietary software products has TOCO Technologies built?", "a": "We have engineered software products including an e-learning & LMS platform, interior design quote & sales automation, an AI-powered ERP, and UAE WPS payroll automation, alongside upcoming Analytics and Real Estate CRM suites."},
                 {"q": "Do you provide a warranty on custom software and web applications?", "a": "Yes. Every custom build includes our 30-day post-launch engineering SLA warranty covering bug remediation, security patches, and cloud optimization at zero extra charge."},
                 {"q": "How does TOCO Technologies ensure UAE data privacy compliance?", "a": "We build in strict compliance with UAE Federal Decree-Law No. 45 of 2021 regarding Personal Data Protection, offering private AWS UAE cloud hosting and on-premise deployments."}
             ])
@@ -1441,10 +1444,7 @@ def build_homepage():
     testimonials = [
         {"quote": "Our logistics and delivery dispatch workflow has never been smoother. TOCO delivered a stable, custom ERP solution that handles 15,000+ monthly shipments with zero downtime.", "name": "Faisal Al-Mansoori", "role": "Operations Director, iKart Express", "logo": "/assets/images/clients/ikart.webp"},
         {"quote": "The custom e-commerce engine developed by TOCO Technologies elevated our luxury brand's digital storefront, driving a direct 42% lift in mobile conversions.", "name": "Mariam Al-Sayegh", "role": "Creative Lead, MŌJ Perfume", "logo": "/assets/images/clients/moj.webp"},
-        {"quote": "TOCO Technologies built a highly scalable international platform that transformed our backend efficiency. Their architecture is clean, fast, and engineered to last.", "name": "Alexander Mercer", "role": "CTO, GlobalEdge International", "logo": "/assets/images/clients/global.webp"},
-        {"quote": "Automating our wholesale B2B ordering saved us over 20 hours of manual data entry every single week. The team in Port Saeed is exceptionally responsive.", "name": "Tariq Al-Nuaimi", "role": "Supply Chain Head, Indoroot", "logo": "/assets/images/clients/indoroot.webp"},
-        {"quote": "The spatial analytics dashboard provides our property asset managers with instant footfall telemetry. Cleanest code and fastest interface we've experienced.", "name": "Elena Rostova", "role": "VP Product, Spaceown", "logo": "/assets/images/clients/space.webp"},
-        {"quote": "From our Figma design system to the production web architecture, TOCO delivered on time and within budget. Their 30-day warranty gave us total peace of mind.", "name": "Vikram Shenoy", "role": "Managing Director, Tekora Solutions", "logo": "/assets/images/clients/tekora.webp"}
+        {"quote": "TOCO Technologies built a highly scalable international platform that transformed our backend efficiency. Their architecture is clean, fast, and engineered to last.", "name": "Alexander Mercer", "role": "CTO, GlobalEdge International", "logo": "/assets/images/clients/global.webp"}
     ]
 
     testi_cards_html = ""
@@ -1464,7 +1464,7 @@ def build_homepage():
     faqs = [
         {"q": "What services does TOCO Technologies offer in Dubai?", "a": "We provide end-to-end technology engineering including AI workflow automation, AI business conversions, mobile application software (iOS & Android), custom web development, bespoke ERP platforms, performance digital marketing, and technical SEO."},
         {"q": "Where is TOCO Technologies located in the UAE?", "a": "Our corporate headquarters is located in Port Saeed, Deira, Dubai, UAE. We serve commercial clients across Dubai, Abu Dhabi, Sharjah, and the wider Arabian Gulf region."},
-        {"q": "What proprietary software products has TOCO Technologies built?", "a": "We have engineered proprietary platforms including Edutechy (Enterprise E-Learning LMS), Adam Designs (Interior quote & sales automation), AI Conversions: ERP (operational enterprise software), and Comfity (UAE WPS payroll automation), alongside upcoming Analytics and Real Estate CRM suites."},
+        {"q": "What proprietary software products has TOCO Technologies built?", "a": "We have engineered software products including an e-learning & LMS platform, interior design quote & sales automation, an AI-powered ERP, and UAE WPS payroll automation, alongside upcoming Analytics and Real Estate CRM suites."},
         {"q": "Do you provide a warranty on custom software and web applications?", "a": "Yes. Every custom build includes our 30-day post-launch engineering SLA warranty covering bug remediation, security patches, and cloud optimization at zero extra charge."},
         {"q": "How does TOCO Technologies ensure UAE data privacy compliance?", "a": "We build in strict compliance with UAE Federal Decree-Law No. 45 of 2021 regarding Personal Data Protection, offering private AWS UAE cloud hosting and on-premise deployments."},
         {"q": "Can TOCO Technologies integrate AI into our existing business software?", "a": "Yes. We engineer resilient API bridges and webhook middleware connecting modern AI models directly to your legacy ERP, CRM, or accounting software without disrupting ongoing operations."}
@@ -1905,15 +1905,15 @@ def build_homepage():
           <p>Purpose-built software platforms engineered by TOCO Technologies for regional UAE commercial verticals.</p>
         </div>
         <div class="grid-3">
-          <!-- Edutechy -->
-          <a href="/products/edutechy-elearning-platform" class="card prod-card rv" style="text-decoration:none;">
+          <!-- E-Learning Platform -->
+          <a href="/products/elearning-platform" class="card prod-card rv" style="text-decoration:none;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
               <span class="tag-badge live">Live Platform</span>
               <span style="color:var(--cyan);font-weight:700;">↗</span>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Edutechy — E-Learning LMS</h3>
+            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">E-Learning &amp; LMS Platform</h3>
             <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              Edutechy – we built it. An enterprise distance-learning LMS with adaptive video streaming, automated grading, and learner verification.
+              An enterprise distance-learning LMS with adaptive video streaming, automated grading, and learner verification.
             </p>
             <div class="tags">
               <span>10K+ Concurrent</span>
@@ -1922,13 +1922,13 @@ def build_homepage():
             </div>
           </a>
 
-          <!-- Adam Designs -->
-          <a href="/products/adam-designs" class="card prod-card rv" style="text-decoration:none;">
+          <!-- Interior Quote Automation -->
+          <a href="/products/interior-quote-automation" class="card prod-card rv" style="text-decoration:none;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
               <span class="tag-badge live">Live Platform</span>
               <span style="color:var(--cyan);font-weight:700;">↗</span>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Adam Designs — Quote Automation</h3>
+            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Interior Quote &amp; Sales Automation</h3>
             <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
               Interior design quote generation and sales automation platform delivering instant luxury BOQ proposals for fit-out studios in Dubai.
             </p>
@@ -1939,13 +1939,13 @@ def build_homepage():
             </div>
           </a>
 
-          <!-- AI Conversions ERP -->
-          <a href="/products/ai-conversions-erp" class="card prod-card rv" style="text-decoration:none;">
+          <!-- AI-Powered ERP -->
+          <a href="/products/ai-erp-platform" class="card prod-card rv" style="text-decoration:none;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
               <span class="tag-badge live">Live Platform</span>
               <span style="color:var(--cyan);font-weight:700;">↗</span>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">AI Conversions: ERP</h3>
+            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">AI-Powered ERP</h3>
             <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
               AI-assisted enterprise operations platform that bridges customer inquiries directly to procurement, dispatch, and automated invoicing.
             </p>
@@ -1956,13 +1956,13 @@ def build_homepage():
             </div>
           </a>
 
-          <!-- Comfity Payroll -->
-          <a href="/products/comfity-payroll-automation" class="card prod-card rv" style="text-decoration:none;">
+          <!-- Payroll Automation -->
+          <a href="/products/payroll-automation" class="card prod-card rv" style="text-decoration:none;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
               <span class="tag-badge live">Live Platform</span>
               <span style="color:var(--cyan);font-weight:700;">↗</span>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Comfity — Payroll &amp; WPS</h3>
+            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Payroll Automation &amp; WPS</h3>
             <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
               Automated payroll and WPS compliance software for UAE businesses. One-click .SIF file generation and automated gratuity calculation.
             </p>

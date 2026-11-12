@@ -93,7 +93,7 @@ SERVICES_DATA = [
         "related": [
             {"title": "AI Business Automation", "url": "/services/ai-business-automation", "desc": "Turn traffic and inquiries into verified business deals."},
             {"title": "Custom ERP & Software", "url": "/services/erp-and-custom-software", "desc": "Connect your automated workflows to a tailored ERP suite."},
-            {"title": "Comfity Payroll Automation", "url": "/products/comfity-payroll-automation", "desc": "Explore our automated payroll product for UAE WPS."}
+            {"title": "Payroll Automation", "url": "/products/payroll-automation", "desc": "Explore our automated payroll product for UAE WPS."}
         ]
     },
     {
@@ -366,7 +366,7 @@ SERVICES_DATA = [
         "related": [
             {"title": "Technical SEO & Search", "url": "/services/seo", "desc": "Maximize organic Dubai search visibility for your new website."},
             {"title": "Mobile App Development", "url": "/services/mobile-app-development", "desc": "Extend your platform with companion iOS and Android applications."},
-            {"title": "Edutechy E-Learning", "url": "/products/edutechy-elearning-platform", "desc": "See how we engineered our proprietary learning software."}
+            {"title": "E-Learning Platform", "url": "/products/elearning-platform", "desc": "See how we engineered our proprietary learning software."}
         ]
     },
     {
@@ -728,9 +728,9 @@ SERVICES_DATA = [
             }
         ],
         "related": [
-            {"title": "AI Conversions ERP Product", "url": "/products/ai-conversions-erp", "desc": "Explore our proprietary AI-assisted enterprise operational platform."},
+            {"title": "AI-Powered ERP Platform", "url": "/products/ai-erp-platform", "desc": "Explore our proprietary AI-assisted enterprise operational platform."},
             {"title": "iKart Express Case Study", "url": "/portfolio", "desc": "Discover how we built custom logistics and dispatch software."},
-            {"title": "Comfity Payroll Automation", "url": "/products/comfity-payroll-automation", "desc": "Integrate UAE WPS compliant payroll into your business suite."}
+            {"title": "Payroll Automation", "url": "/products/payroll-automation", "desc": "Integrate UAE WPS compliant payroll into your business suite."}
         ]
     },
     {
@@ -919,12 +919,12 @@ SERVICES_DATA = [
 
 PRODUCTS_DATA = [
     {
-        "slug": "edutechy-elearning-platform",
-        "title": "Edutechy E-Learning LMS Platform | Built by TOCO Technologies",
-        "meta_desc": "Edutechy – we built it. An enterprise e-learning and LMS platform with video streaming, automated grading, student portals, and corporate compliance in UAE.",
-        "h1": "Edutechy — Modern E-Learning Platform Built by TOCO",
+        "slug": "elearning-platform",
+        "title": "E-Learning & LMS Platform Dubai | Built by TOCO Technologies",
+        "meta_desc": "An enterprise e-learning and LMS platform with video streaming, automated grading, student portals, and corporate compliance in UAE.",
+        "h1": "E-Learning Platform — Modern LMS Built by TOCO",
         "status_badge": "Live Platform / Built by TOCO",
-        "lede": "Edutechy is our flagship proprietary learning management system (LMS) engineered by TOCO Technologies. Designed for higher education academies, corporate training institutes, and GCC enterprises requiring scalable, bilingual digital learning.",
+        "lede": "Our e-learning platform is a modern learning management system (LMS) engineered by TOCO Technologies. Designed for higher education academies, corporate training institutes, and GCC enterprises requiring scalable, bilingual digital learning.",
         "features": [
             {
                 "icon": "🎓",
@@ -961,7 +961,7 @@ PRODUCTS_DATA = [
             {
                 "num": "01",
                 "title": "Platform Provisioning & White-Label Theming",
-                "desc": "We deploy an isolated Edutechy tenant branded with your institution's logo, colors, custom domain, and corporate email SMTP."
+                "desc": "We deploy an isolated platform instance branded with your institution's logo, colors, custom domain, and corporate email SMTP."
             },
             {
                 "num": "02",
@@ -988,35 +988,35 @@ PRODUCTS_DATA = [
         "tech_stack": ["Node.js", "Python", "PostgreSQL", "AWS S3 / CloudFront", "Docker", "Stripe", "HLS Video", "REST APIs"],
         "faqs": [
             {
-                "q": "What makes Edutechy different from open-source systems like Moodle?",
-                "a": "Edutechy was engineered from the ground up for modern speed, intuitive smartphone user experience, and native bilingual Arabic/English execution. Unlike bloated legacy platforms, Edutechy loads in under 0.9 seconds, eliminates plugin vulnerability risks, and requires zero technical maintenance from your academic staff."
+                "q": "What makes this e-learning platform different from open-source systems like Moodle?",
+                "a": "The platform was engineered from the ground up for modern speed, intuitive smartphone user experience, and native bilingual Arabic/English execution. Unlike bloated legacy platforms, it loads in under 0.9 seconds, eliminates plugin vulnerability risks, and requires zero technical maintenance from your academic staff."
             },
             {
-                "q": "Can Edutechy be hosted on our private cloud within the UAE?",
+                "q": "Can the e-learning platform be hosted on our private cloud within the UAE?",
                 "a": "Yes. We offer both managed cloud hosting on AWS UAE regions (satisfying local data residency mandates) or dedicated on-premise installation inside your corporate data center."
             },
             {
                 "q": "Can we sell courses with recurring monthly subscriptions in the UAE?",
-                "a": "Yes. Edutechy includes a complete monetization engine supporting one-time course fees, monthly/annual student memberships, corporate seat licensing, and discount voucher codes."
+                "a": "Yes. The platform includes a complete monetization engine supporting one-time course fees, monthly/annual student memberships, corporate seat licensing, and discount voucher codes."
             },
             {
-                "q": "Does Edutechy support live virtual classrooms?",
-                "a": "Yes. Edutechy integrates seamlessly with Zoom API, Microsoft Teams, and WebRTC live streaming for interactive real-time lectures."
+                "q": "Does the platform support live virtual classrooms?",
+                "a": "Yes. The platform integrates seamlessly with Zoom API, Microsoft Teams, and WebRTC live streaming for interactive real-time lectures."
             }
         ],
         "related": [
             {"title": "Custom Software Development", "url": "/services/website-and-software-development", "desc": "Learn how we build bespoke enterprise web applications."},
             {"title": "AI Automation Services", "url": "/services/ai-automation", "desc": "Add AI auto-grading and student tutoring chatbots to your LMS."},
-            {"title": "Contact for Demo", "url": "/contact", "desc": "Request a guided live walkthrough of the Edutechy LMS platform."}
+            {"title": "Contact for Demo", "url": "/contact", "desc": "Request a guided live walkthrough of the e-learning platform."}
         ]
     },
     {
-        "slug": "adam-designs",
-        "title": "Adam Designs | Interior Design Quote & Sales Automation Platform",
-        "meta_desc": "Adam Designs: proprietary interior design quote generation and sales automation platform engineered by TOCO Technologies for UAE fit-out firms.",
-        "h1": "Adam Designs — Interior Quote & Sales Automation Platform",
+        "slug": "interior-quote-automation",
+        "title": "Interior Design Quote & Sales Automation Software Dubai | TOCO",
+        "meta_desc": "Interior design quote generation and sales automation software engineered by TOCO Technologies for UAE fit-out and interior firms.",
+        "h1": "Interior Quote & Sales Automation — Built for Fit-Out Studios",
         "status_badge": "Live Platform / Built by TOCO",
-        "lede": "Architected specifically for interior design studios, fit-out contractors, and architectural firms in Dubai and Abu Dhabi. Adam Designs automates complex bill-of-quantities (BOQ), material estimation, and client proposal generation in minutes.",
+        "lede": "Architected specifically for interior design studios, fit-out contractors, and architectural firms in Dubai and Abu Dhabi. The platform automates complex bill-of-quantities (BOQ), material estimation, and client proposal generation in minutes.",
         "features": [
             {
                 "icon": "📐",
@@ -1053,7 +1053,7 @@ PRODUCTS_DATA = [
             {
                 "num": "01",
                 "title": "Catalog & Price Book Setup",
-                "desc": "We import your suppliers, material price matrices, labor day-rates, and profit markup tiers into your private Adam Designs tenant."
+                "desc": "We import your suppliers, material price matrices, labor day-rates, and profit markup tiers into your private platform instance."
             },
             {
                 "num": "02",
@@ -1080,35 +1080,35 @@ PRODUCTS_DATA = [
         "tech_stack": ["Python", "FastAPI", "PostgreSQL", "React/Vanilla JS", "PDF Engine", "Stripe", "Docker", "AWS"],
         "faqs": [
             {
-                "q": "Why is Adam Designs superior to generic estimating software?",
-                "a": "Generic software is built for general construction. Adam Designs is purpose-built for UAE luxury interior design and commercial fit-out companies, featuring specialized modules for joinery finishes, Italian marble square-meter rates, sanitaryware packages, and Dubai Municipality permitting fees."
+                "q": "How is this different from generic estimating software?",
+                "a": "Generic software is built for general construction. Our quote automation platform is purpose-built for UAE luxury interior design and commercial fit-out companies, featuring specialized modules for joinery finishes, Italian marble square-meter rates, sanitaryware packages, and Dubai Municipality permitting fees."
             },
             {
                 "q": "Can our clients customize finish options directly inside the quote?",
                 "a": "Yes. Interactive web proposals allow clients to toggle between standard and premium finish options, watching the total price update dynamically before signing electronically."
             },
             {
-                "q": "Does Adam Designs integrate with our existing accounting software?",
+                "q": "Does the quote platform integrate with our existing accounting software?",
                 "a": "Yes. Approved quotes push directly into QuickBooks, Xero, Zoho Books, or your custom ERP, creating corresponding invoices and purchase orders automatically."
             },
             {
-                "q": "Can we license Adam Designs for our Dubai interior studio?",
+                "q": "Can we deploy this platform for our Dubai interior studio?",
                 "a": "Yes. We offer both private SaaS tenant subscriptions and fully dedicated, customized enterprise deployments for established fit-out contractors."
             }
         ],
         "related": [
             {"title": "Custom ERP Development", "url": "/services/erp-and-custom-software", "desc": "Build an end-to-end operational system around your estimating engine."},
             {"title": "AI Business Conversions", "url": "/services/ai-business-automation", "desc": "Capture inbound interior design inquiries automatically on WhatsApp."},
-            {"title": "Book Adam Designs Demo", "url": "/contact", "desc": "Schedule an interactive demo tailored to your interior design studio."}
+            {"title": "Book a Platform Demo", "url": "/contact", "desc": "Schedule an interactive demo tailored to your interior design studio."}
         ]
     },
     {
-        "slug": "ai-conversions-erp",
-        "title": "AI Conversions: ERP | Intelligent Enterprise Software in Dubai",
-        "meta_desc": "AI Conversions ERP by TOCO Technologies. Next-generation enterprise software bridging customer inquiries directly to procurement, dispatch, and billing.",
-        "h1": "AI Conversions: ERP — Intelligent Enterprise Workflow Platform",
+        "slug": "ai-erp-platform",
+        "title": "AI-Powered ERP Platform | Intelligent Enterprise Software Dubai",
+        "meta_desc": "An AI-powered ERP platform by TOCO Technologies. Next-generation enterprise software bridging customer inquiries directly to procurement, dispatch, and billing.",
+        "h1": "AI-Powered ERP — Intelligent Enterprise Workflow Platform",
         "status_badge": "Live Platform / Built by TOCO",
-        "lede": "Where enterprise resource planning meets autonomous AI decision engines. AI Conversions ERP eliminates the manual gap between incoming customer orders, inventory checks, supplier procurement, and delivery dispatch.",
+        "lede": "Where enterprise resource planning meets autonomous AI decision engines. The platform eliminates the manual gap between incoming customer orders, inventory checks, supplier procurement, and delivery dispatch.",
         "features": [
             {
                 "icon": "🤖",
@@ -1172,11 +1172,11 @@ PRODUCTS_DATA = [
         "tech_stack": ["Python", "FastAPI", "PostgreSQL", "Redis", "Celery", "OpenAI Embeddings", "Docker", "AWS UAE"],
         "faqs": [
             {
-                "q": "How does AI Conversions: ERP differ from standard ERP systems?",
-                "a": "Standard ERPs are passive databases that require humans to manually type in every quote, order, and invoice. AI Conversions: ERP acts as an active assistant that reads emails, extracts line items from PDF purchase orders, checks warehouse stock, and presents pre-verified orders for one-click manager signoff."
+                "q": "How does this AI-powered ERP differ from standard ERP systems?",
+                "a": "Standard ERPs are passive databases that require humans to manually type in every quote, order, and invoice. Our AI-powered ERP acts as an active assistant that reads emails, extracts line items from PDF purchase orders, checks warehouse stock, and presents pre-verified orders for one-click manager signoff."
             },
             {
-                "q": "Can AI Conversions: ERP connect with our existing e-commerce storefront?",
+                "q": "Can the AI-powered ERP connect with our existing e-commerce storefront?",
                 "a": "Yes. It comes with built-in RESTful connectors for Shopify, WooCommerce, and custom web portals, synchronizing orders and inventory in real time."
             },
             {
@@ -1195,12 +1195,12 @@ PRODUCTS_DATA = [
         ]
     },
     {
-        "slug": "comfity-payroll-automation",
-        "title": "Comfity Payroll Automation | UAE WPS & HR Compliance Platform",
-        "meta_desc": "Comfity: automated payroll and WPS compliance software for UAE businesses. One-click SIF file generation, automated gratuity, and labor law compliance.",
-        "h1": "Comfity — Automated UAE Payroll & WPS Compliance",
+        "slug": "payroll-automation",
+        "title": "Payroll Automation Software Dubai | UAE WPS & HR Compliance",
+        "meta_desc": "Automated payroll and WPS compliance software for UAE businesses. One-click SIF file generation, automated gratuity, and labor law compliance.",
+        "h1": "Payroll Automation — UAE Payroll & WPS Compliance",
         "status_badge": "Live Platform / Built by TOCO",
-        "lede": "Say goodbye to payroll calculation errors and late WPS filing penalties. Comfity is our proprietary payroll automation platform engineered specifically for UAE labor law, Ministry of Human Resources and Emiratisation (MOHRE) compliance, and one-click SIF file generation.",
+        "lede": "Say goodbye to payroll calculation errors and late WPS filing penalties. Our payroll automation platform is engineered specifically for UAE labor law, Ministry of Human Resources and Emiratisation (MOHRE) compliance, and one-click SIF file generation.",
         "features": [
             {
                 "icon": "💼",
@@ -1264,26 +1264,26 @@ PRODUCTS_DATA = [
         "tech_stack": ["Python", "FastAPI", "PostgreSQL", "WPS SIF Engine", "PDF Generator", "Docker", "AWS UAE"],
         "faqs": [
             {
-                "q": "Does Comfity generate official .SIF files for UAE banks?",
-                "a": "Yes. Comfity generates valid Wages Protection System (WPS) .SIF files formatted to the precise technical specifications mandated by the Central Bank of the UAE and accepted by all commercial banks including Emirates NBD, FAB, Mashreq, and ADCB."
+                "q": "Does the platform generate official .SIF files for UAE banks?",
+                "a": "Yes. The platform generates valid Wages Protection System (WPS) .SIF files formatted to the precise technical specifications mandated by the Central Bank of the UAE and accepted by all commercial banks including Emirates NBD, FAB, Mashreq, and ADCB."
             },
             {
-                "q": "How does Comfity handle UAE end-of-service gratuity calculations?",
-                "a": "Comfity automatically applies the statutory formulas dictated by UAE Federal Decree-Law No. 33 of 2021, distinguishing between basic salary and allowances, partial years of service, and contract termination types."
+                "q": "How does the platform handle UAE end-of-service gratuity calculations?",
+                "a": "The platform automatically applies the statutory formulas dictated by UAE Federal Decree-Law No. 33 of 2021, distinguishing between basic salary and allowances, partial years of service, and contract termination types."
             },
             {
-                "q": "Can Comfity manage payroll for companies with multiple UAE trade licenses?",
-                "a": "Yes. Comfity supports multi-entity corporate structures, allowing HR managers to run separate WPS payrolls for multiple sister companies from a single dashboard."
+                "q": "Can the platform manage payroll for companies with multiple UAE trade licenses?",
+                "a": "Yes. The platform supports multi-entity corporate structures, allowing HR managers to run separate WPS payrolls for multiple sister companies from a single dashboard."
             },
             {
-                "q": "How can my company deploy Comfity in Dubai?",
-                "a": "We offer Comfity as a turnkey cloud subscription or as an integrated payroll module connected directly into your custom TOCO ERP platform."
+                "q": "How can my company deploy payroll automation in Dubai?",
+                "a": "We offer payroll automation as a turnkey cloud subscription or as an integrated payroll module connected directly into your custom TOCO ERP platform."
             }
         ],
         "related": [
             {"title": "Custom ERP Development", "url": "/services/erp-and-custom-software", "desc": "Integrate payroll directly into your broader business operations."},
             {"title": "AI Automation Services", "url": "/services/ai-automation", "desc": "Automate document processing for trade licenses and visas."},
-            {"title": "Contact for Comfity Setup", "url": "/contact", "desc": "Get your UAE business onboarded with automated payroll."}
+            {"title": "Contact for Payroll Setup", "url": "/contact", "desc": "Get your UAE business onboarded with automated payroll."}
         ]
     },
     {

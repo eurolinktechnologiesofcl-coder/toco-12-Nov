@@ -14,6 +14,8 @@ Hero / page-hero sections are left untouched (they are always black).
 import os
 import re
 
+from icons import iconize
+
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Section palettes per page type (in document order, excluding the hero).
@@ -97,6 +99,9 @@ def apply(rel_path):
         return f'<section class="sec theme-{theme}"{style_attr}{rest}>'
 
     new_html = SECTION_RE.sub(repl, html)
+
+    # Standard SVG line icons instead of emoji.
+    new_html = iconize(new_html)
 
     # CTA band is always a blue card.
     new_html = new_html.replace('class="card cta-band rv"', 'class="card cta-band theme-blue rv"')

@@ -24,7 +24,8 @@ def render_header(active_nav=""):
   <header class="nav" id="main-nav">
     <div class="wrap">
       <a href="/" class="brand" aria-label="TOCO Technologies Homepage">
-        <img src="/assets/images/logo.webp" alt="TOCO Technologies Dubai" width="168" height="42" class="logo-img">
+        <img src="/assets/images/logo.webp" alt="TOCO Technologies logo" width="40" height="40" class="logo-img">
+        <span class="brand-text"><span class="brand-name">TOCO Technologies</span><span class="brand-sub">Dubai &bull; UAE</span></span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -119,31 +120,31 @@ def render_header(active_nav=""):
             <svg class="chev" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="dd-panel mega" role="menu" aria-label="Products Submenu">
-            <a href="/products/edutechy-elearning-platform" class="dd-item" role="menuitem">
+            <a href="/products/elearning-platform" class="dd-item" role="menuitem">
               <span class="mi">🎓</span>
               <div>
-                <b>Edutechy E-Learning <span class="tag-badge live">Live</span></b>
+                <b>E-Learning Platform <span class="tag-badge live">Live</span></b>
                 <small>Enterprise LMS platform &amp; training portal</small>
               </div>
             </a>
-            <a href="/products/adam-designs" class="dd-item" role="menuitem">
+            <a href="/products/interior-quote-automation" class="dd-item" role="menuitem">
               <span class="mi">📐</span>
               <div>
-                <b>Adam Designs <span class="tag-badge live">Live</span></b>
+                <b>Interior Quote Automation <span class="tag-badge live">Live</span></b>
                 <small>Interior quote &amp; sales automation platform</small>
               </div>
             </a>
-            <a href="/products/ai-conversions-erp" class="dd-item" role="menuitem">
+            <a href="/products/ai-erp-platform" class="dd-item" role="menuitem">
               <span class="mi">📊</span>
               <div>
-                <b>AI Conversions ERP <span class="tag-badge live">Live</span></b>
+                <b>AI-Powered ERP <span class="tag-badge live">Live</span></b>
                 <small>Intelligent operations &amp; deal conversion</small>
               </div>
             </a>
-            <a href="/products/comfity-payroll-automation" class="dd-item" role="menuitem">
+            <a href="/products/payroll-automation" class="dd-item" role="menuitem">
               <span class="mi">💼</span>
               <div>
-                <b>Comfity Payroll <span class="tag-badge live">Live</span></b>
+                <b>Payroll Automation <span class="tag-badge live">Live</span></b>
                 <small>Automated UAE payroll &amp; WPS compliance</small>
               </div>
             </a>
@@ -190,7 +191,8 @@ def render_header(active_nav=""):
   <aside class="mobile-menu" aria-label="Mobile Navigation">
     <div class="mobile-menu-head">
       <a href="/" class="brand">
-        <img src="/assets/images/logo.webp" alt="TOCO Technologies" width="140" height="35">
+        <img src="/assets/images/logo.webp" alt="TOCO Technologies logo" width="40" height="40" class="logo-img">
+        <span class="brand-text"><span class="brand-name">TOCO Technologies</span><span class="brand-sub">Dubai &bull; UAE</span></span>
       </a>
       <button class="mobile-close" type="button" aria-label="Close navigation menu">✕</button>
     </div>
@@ -224,10 +226,10 @@ def render_header(active_nav=""):
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
           <ul class="mobile-sub-list">
-            <li><a href="/products/edutechy-elearning-platform">🎓 Edutechy (E-Learning LMS)</a></li>
-            <li><a href="/products/adam-designs">📐 Adam Designs (Interior Quotes)</a></li>
-            <li><a href="/products/ai-conversions-erp">📊 AI Conversions: ERP</a></li>
-            <li><a href="/products/comfity-payroll-automation">💼 Comfity (Payroll &amp; WPS)</a></li>
+            <li><a href="/products/elearning-platform">🎓 E-Learning Platform</a></li>
+            <li><a href="/products/interior-quote-automation">📐 Interior Quote Automation</a></li>
+            <li><a href="/products/ai-erp-platform">📊 AI-Powered ERP</a></li>
+            <li><a href="/products/payroll-automation">💼 Payroll Automation (WPS)</a></li>
             <li><a href="/products/analytics-tracking">📉 Analytics Suite (Waitlist)</a></li>
             <li><a href="/products/real-estate-crm">🏙️ Real Estate CRM (Waitlist)</a></li>
           </ul>
@@ -257,7 +259,8 @@ def render_footer():
         <!-- Col 1: Brand & Contact -->
         <div class="foot-col brand-col">
           <a href="/" class="brand" aria-label="TOCO Technologies">
-            <img src="/assets/images/logo.webp" alt="TOCO Technologies Dubai" width="160" height="40" class="logo-img">
+            <img src="/assets/images/logo.webp" alt="TOCO Technologies logo" width="40" height="40" class="logo-img">
+        <span class="brand-text"><span class="brand-name">TOCO Technologies</span><span class="brand-sub">Dubai &bull; UAE</span></span>
           </a>
           <p class="foot-tagline">
             Engineering high-impact AI business automation, enterprise web &amp; mobile software, custom ERP platforms, and performance digital systems for businesses in Dubai and across the UAE.
@@ -303,10 +306,10 @@ def render_footer():
         <div class="foot-col">
           <h4>Our Products</h4>
           <ul class="foot-links">
-            <li><a href="/products/edutechy-elearning-platform">Edutechy E-Learning LMS</a></li>
-            <li><a href="/products/adam-designs">Adam Designs (Interior Quotes)</a></li>
-            <li><a href="/products/ai-conversions-erp">AI Conversions: ERP</a></li>
-            <li><a href="/products/comfity-payroll-automation">Comfity Payroll Automation</a></li>
+            <li><a href="/products/elearning-platform">E-Learning Platform</a></li>
+            <li><a href="/products/interior-quote-automation">Interior Quote Automation</a></li>
+            <li><a href="/products/ai-erp-platform">AI-Powered ERP</a></li>
+            <li><a href="/products/payroll-automation">Payroll Automation</a></li>
             <li><a href="/products/analytics-tracking">Analytics Suite <small>(Waitlist)</small></a></li>
             <li><a href="/products/real-estate-crm">Real Estate CRM <small>(Waitlist)</small></a></li>
             <li><a href="/products">All Products Hub</a></li>

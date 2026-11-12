@@ -314,9 +314,8 @@
         const maxIdx = Math.max(0, cards.length - itemsPerView);
         currentIndex = Math.max(0, Math.min(index, maxIdx));
 
-        const cardWidthPercent = 100 / itemsPerView;
-        const offset = currentIndex * cardWidthPercent;
-        track.style.transform = 'translateX(-' + offset + '%)';
+        const step = cards[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0);
+        track.style.transform = 'translateX(-' + (currentIndex * step) + 'px)';
         updateDots();
       }
 
