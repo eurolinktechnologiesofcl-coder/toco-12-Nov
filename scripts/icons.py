@@ -119,3 +119,4 @@ def iconize(html):
             return svg(name, cls)
         parts[i] = _ANY_RE.sub(inline, parts[i])
     return "".join(parts)
+

@@ -1291,7 +1291,7 @@ PRODUCTS_DATA = [
         "title": "Analytics Tracking Suite | Real-Time Business Intelligence Dubai",
         "meta_desc": "Analytics Tracking Suite by TOCO Technologies. Multi-touch customer journey telemetry and privacy-first analytics for GCC digital businesses. Join waitlist.",
         "h1": "Analytics Tracking Suite — Real-Time Business Telemetry",
-        "status_badge": "In Development / VIP Waitlist",
+        "status_badge": "In Development",
         "is_waitlist": True,
         "lede": "Next-generation customer journey attribution, multi-touch event telemetry, and privacy-first analytics tailored for regional GCC digital commerce. Currently in private beta development by TOCO Technologies.",
         "features": [
@@ -1380,7 +1380,7 @@ PRODUCTS_DATA = [
         "title": "Real Estate CRM Software Dubai | Gulf Brokerage Acceleration",
         "meta_desc": "Real Estate CRM: purpose-built for Dubai property brokerages and off-plan developers. WhatsApp lead parsing, inventory matching, and agent pipelines. Join waitlist.",
         "h1": "Real Estate CRM — Gulf Brokerage & Lead Acceleration",
-        "status_badge": "In Development / VIP Waitlist",
+        "status_badge": "In Development",
         "is_waitlist": True,
         "lede": "Purpose-built for Dubai real estate brokerages, off-plan developers, and leasing agencies. Features automated WhatsApp lead intake, Property Finder & Bayut integration, unit inventory matching, and agent commission tracking.",
         "features": [

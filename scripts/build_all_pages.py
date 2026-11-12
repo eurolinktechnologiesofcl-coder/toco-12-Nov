@@ -150,14 +150,14 @@ def render_header(active_nav=""):
             <a href="/products/analytics-tracking" class="dd-item" role="menuitem">
               <span class="mi">📉</span>
               <div>
-                <b>Analytics Tracking Suite <span class="tag-badge dev">Waitlist</span></b>
+                <b>Analytics Tracking Suite</b>
                 <small>Multi-touch customer journey analytics</small>
               </div>
             </a>
             <a href="/products/real-estate-crm" class="dd-item" role="menuitem">
               <span class="mi">🏙️</span>
               <div>
-                <b>Real Estate CRM <span class="tag-badge dev">Waitlist</span></b>
+                <b>Real Estate CRM</b>
                 <small>Gulf brokerage &amp; WhatsApp lead acceleration</small>
               </div>
             </a>
@@ -229,8 +229,8 @@ def render_header(active_nav=""):
             <li><a href="/products/interior-quote-automation">📐 Interior Quote Automation</a></li>
             <li><a href="/products/ai-erp-platform">📊 AI-Powered ERP</a></li>
             <li><a href="/products/payroll-automation">💼 Payroll Automation (WPS)</a></li>
-            <li><a href="/products/analytics-tracking">📉 Analytics Suite (Waitlist)</a></li>
-            <li><a href="/products/real-estate-crm">🏙️ Real Estate CRM (Waitlist)</a></li>
+            <li><a href="/products/analytics-tracking">📉 Analytics Tracking Suite</a></li>
+            <li><a href="/products/real-estate-crm">🏙️ Real Estate CRM</a></li>
           </ul>
         </li>
 
@@ -309,8 +309,8 @@ def render_footer():
             <li><a href="/products/interior-quote-automation">Interior Quote Automation</a></li>
             <li><a href="/products/ai-erp-platform">AI-Powered ERP</a></li>
             <li><a href="/products/payroll-automation">Payroll Automation</a></li>
-            <li><a href="/products/analytics-tracking">Analytics Suite <small>(Waitlist)</small></a></li>
-            <li><a href="/products/real-estate-crm">Real Estate CRM <small>(Waitlist)</small></a></li>
+            <li><a href="/products/analytics-tracking">Analytics Tracking Suite</a></li>
+            <li><a href="/products/real-estate-crm">Real Estate CRM</a></li>
             <li><a href="/products">All Products Hub</a></li>
           </ul>
         </div>
@@ -585,7 +585,7 @@ def build_products_hub():
     for prod in PRODUCTS_DATA:
         is_dev = prod.get("is_waitlist", False)
         badge_cls = "dev" if is_dev else "live"
-        badge_txt = "Waitlist" if is_dev else "Live Platform"
+        badge_txt = "In Development" if is_dev else "Live Platform"
         cards_html += f'''        <a href="/products/{prod["slug"]}" class="card rv" style="text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;">
           <div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
@@ -623,7 +623,7 @@ def build_products_hub():
         <div class="sec-head">
           <div class="eyebrow">Product Portfolio</div>
           <h2>Production Platforms &amp; Next-Gen Solutions</h2>
-          <p>Explore our battle-tested live platforms or join the early access waitlist for our upcoming business intelligence and CRM suites.</p>
+          <p>Explore our battle-tested live platforms or explore our upcoming business intelligence and CRM suites.</p>
         </div>
         <div class="grid-3">
 {cards_html}        </div>
@@ -1981,12 +1981,11 @@ def build_homepage():
             </div>
             <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Analytics Tracking Suite</h3>
             <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              Privacy-first customer journey attribution and real-time business telemetry designed for GCC commerce. Join the VIP waitlist.
+              Privacy-first customer journey attribution and real-time business telemetry designed for GCC commerce.
             </p>
             <div class="tags">
               <span>Cookie-Less</span>
               <span>&lt; 5KB Tag</span>
-              <span>VIP Waitlist</span>
             </div>
           </a>
 
@@ -2003,7 +2002,6 @@ def build_homepage():
             <div class="tags">
               <span>Bayut &amp; PF Sync</span>
               <span>Broker WhatsApp</span>
-              <span>VIP Waitlist</span>
             </div>
           </a>
         </div>
@@ -2317,6 +2315,10 @@ def main():
     build_legal_and_404()
     build_homepage()
     build_sitemap_and_robots()
+
+    # Premium v2 layout for selected service pages (preview: ai-automation)
+    from service_v2 import main as build_service_v2
+    build_service_v2()
 
     # Assign white / black / blue palettes to every section
     from apply_theme import main as apply_theme

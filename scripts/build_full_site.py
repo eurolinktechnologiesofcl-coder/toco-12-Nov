@@ -151,14 +151,14 @@ def render_header(active_nav=""):
             <a href="/products/analytics-tracking" class="dd-item" role="menuitem">
               <span class="mi">📉</span>
               <div>
-                <b>Analytics Tracking Suite <span class="tag-badge dev">Waitlist</span></b>
+                <b>Analytics Tracking Suite</b>
                 <small>Multi-touch customer journey analytics</small>
               </div>
             </a>
             <a href="/products/real-estate-crm" class="dd-item" role="menuitem">
               <span class="mi">🏙️</span>
               <div>
-                <b>Real Estate CRM <span class="tag-badge dev">Waitlist</span></b>
+                <b>Real Estate CRM</b>
                 <small>Gulf brokerage &amp; WhatsApp lead acceleration</small>
               </div>
             </a>
@@ -230,8 +230,8 @@ def render_header(active_nav=""):
             <li><a href="/products/interior-quote-automation">📐 Interior Quote Automation</a></li>
             <li><a href="/products/ai-erp-platform">📊 AI-Powered ERP</a></li>
             <li><a href="/products/payroll-automation">💼 Payroll Automation (WPS)</a></li>
-            <li><a href="/products/analytics-tracking">📉 Analytics Suite (Waitlist)</a></li>
-            <li><a href="/products/real-estate-crm">🏙️ Real Estate CRM (Waitlist)</a></li>
+            <li><a href="/products/analytics-tracking">📉 Analytics Tracking Suite</a></li>
+            <li><a href="/products/real-estate-crm">🏙️ Real Estate CRM</a></li>
           </ul>
         </li>
 
@@ -310,8 +310,8 @@ def render_footer():
             <li><a href="/products/interior-quote-automation">Interior Quote Automation</a></li>
             <li><a href="/products/ai-erp-platform">AI-Powered ERP</a></li>
             <li><a href="/products/payroll-automation">Payroll Automation</a></li>
-            <li><a href="/products/analytics-tracking">Analytics Suite <small>(Waitlist)</small></a></li>
-            <li><a href="/products/real-estate-crm">Real Estate CRM <small>(Waitlist)</small></a></li>
+            <li><a href="/products/analytics-tracking">Analytics Tracking Suite</a></li>
+            <li><a href="/products/real-estate-crm">Real Estate CRM</a></li>
             <li><a href="/products">All Products Hub</a></li>
           </ul>
         </div>
