@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-TOCO Technologies — Service page template v2 (premium layout).
+TOCO Technologies — Service Page Template v2 (High-Variety Premium Layout)
 
-Currently applied ONLY to /services/ai-automation as a design preview.
-To roll it out to every service, add the slug to V2_SLUGS and give it an
-entry in EXTRA (before/after, use cases, timeline durations, hero points).
+Currently applied to /services/ai-automation as a single-page design preview.
+Replaces uniform box grids with interactive Department Workflow Studio,
+asymmetric bento modules, split comparison consoles, and distinct feature cards.
 """
 
 import os
@@ -22,41 +22,158 @@ V2_SLUGS = ["ai-automation"]
 
 EXTRA = {
     "ai-automation": {
-        "pill": "AI Automation",
-        "pill_note": "Agents that work inside your systems",
+        "pill": "AI Automation • Dubai, UAE",
+        "pill_note": "Autonomous Workflow Execution",
         "h1_html": 'AI Automation &amp; <span class="grad-text">Autonomous Agents</span> for Dubai Businesses',
         "hero_points": ["Human-in-the-loop approvals", "UAE data residency options", "30-day post-launch warranty"],
-        "integrations": ["OpenAI", "WhatsApp Business", "Zoho", "HubSpot", "Microsoft 365", "Google Workspace", "PostgreSQL", "AWS UAE"],
+        "integrations": [
+            "OpenAI GPT-4o", "Anthropic Claude", "WhatsApp Cloud API", "Microsoft 365",
+            "Google Workspace", "Zoho ERP", "HubSpot", "PostgreSQL", "SAP", "AWS UAE"
+        ],
         "console": [
-            ("file-text", "Invoice received", "accounts@supplier.ae · PDF", "done", "Done"),
-            ("search", "Data extracted", "Vendor, TRN, line items, 5% VAT", "done", "Done"),
-            ("layers", "Matched against ERP", "Checking PO and goods received", "run", "Running"),
+            ("file-text", "Invoice received", "accounts@supplier.ae · PDF attached", "done", "Done"),
+            ("search", "Data extracted", "Vendor TRN, line items, 5% VAT", "done", "Done"),
+            ("layers", "Matched against ERP", "Checking PO #9481 & Goods Receipt", "run", "Running"),
             ("message", "Manager approval", "One-tap sign-off on WhatsApp", "wait", "Queued"),
         ],
-        "big_title": "One orchestrator, many specialised agents",
-        "big_desc": "We design a team of focused AI agents — each with one job, clear rules and a full audit log — coordinated by a single orchestrator that hands work between them and escalates to a person when something looks off.",
-        "agents": [("Intake agent", "Reads emails & files", 92), ("Validation agent", "Applies your rules", 74), ("Posting agent", "Updates your ERP", 58)],
         "before": [
-            "Staff re-type invoices, orders and forms into the ERP by hand",
-            "Approvals are chased by email and phone calls",
-            "Mistakes surface at month-end, when they are expensive to fix",
-            "Work stops after office hours and over the weekend",
-            "No clear record of who changed what, and when",
+            "Staff manually re-key invoices, bills, and purchase orders into ERP",
+            "Approvals stall in buried email threads and unanswered phone calls",
+            "Discrepancies and math errors surface only at month-end closing",
+            "Operations completely halt after 6:00 PM, on weekends, and holidays",
+            "Zero centralized audit trail of who modified records, when, or why",
         ],
         "after": [
-            "Documents are read, checked and posted automatically",
-            "Approvals arrive on WhatsApp with one-tap sign-off",
-            "Validation rules stop mismatches before anything is posted",
-            "Agents keep working evenings, weekends and holidays",
-            "Every action is logged for audit and compliance",
+            "Documents are ingested, verified, and posted to ERP in under 5 seconds",
+            "Instant manager sign-offs sent directly to WhatsApp with 1-tap approval",
+            "Pre-posting validation rules catch discrepancies before records commit",
+            "Autonomous agents run 24/7/365 through nights, weekends, and holidays",
+            "Cryptographic audit log records every prompt, decision, and ERP write",
         ],
-        "durations": ["Days 1–5", "Days 6–14", "Weeks 3–4", "Launch + 30 days"],
-        "use_cases": [
-            ("wallet", "Finance & accounts", "Close the books faster with documents that read, check and post themselves.", ["Invoice capture & PO matching", "VAT and TRN checks", "Bank reconciliation", "Payment reminders"]),
-            ("truck", "Logistics & operations", "Keep dispatch, drivers and customers in sync without manual updates.", ["Delivery notes & POD capture", "Dispatch status updates", "Customs document checks", "Stock alerts"]),
-            ("message", "Sales & customer service", "Answer, route and follow up on every enquiry while it is still warm.", ["Inbox triage & routing", "Quotation drafting", "CRM updates", "Follow-up sequences"]),
-            ("users", "HR & administration", "Take repetitive paperwork off your HR team's desk.", ["Visa & Emirates ID checks", "Onboarding packs", "Leave requests", "Policy Q&A assistant"]),
-        ],
+        "durations": ["Days 1–5", "Days 6–14", "Weeks 3–4", "Launch + 30 Days"],
+        "departments": [
+            {
+                "id": "finance",
+                "label": "Finance & Accounts",
+                "icon": "wallet",
+                "badge": "Finance & Accounts Automation",
+                "headline": "Close month-end 4x faster with self-processing invoices and instant 3-way reconciliation.",
+                "desc": "Eliminate manual data entry from supplier invoices, utility bills, and purchase orders. Our AI agents extract Arabic and English text, verify UAE TRNs against Federal Tax Authority rules, check goods receipts in your ERP, and draft payment schedules.",
+                "metrics": [
+                    ("zap", "18.5 hrs saved / week"),
+                    ("badge-check", "99.8% extraction precision")
+                ],
+                "steps": [
+                    "Ingests incoming PDF invoices from supplier emails and WhatsApp",
+                    "Extracts vendor details, line items, and calculates 5% UAE VAT",
+                    "Matches against Purchase Orders (PO) and Goods Received Notes (GRN)",
+                    "Dispatches WhatsApp approval for invoices exceeding threshold",
+                    "Posts approved transaction directly to ERP accounting ledger"
+                ],
+                "sim_title": "toco-agent / finance-sentinel",
+                "sim_status": "Validated",
+                "sim_rows": [
+                    ("Scanned Document", "INV-2024-8902 · Al Futtaim Engineering LLC", "normal"),
+                    ("TRN Check", "100293849100003 · Validated via FTA UAE Registry", "ok"),
+                    ("Subtotal", "AED 14,200.00", "normal"),
+                    ("VAT (5%)", "AED 710.00", "accent"),
+                    ("Total Amount", "AED 14,910.00", "normal"),
+                    ("3-Way Match", "PO #PO-4410 Matched (100% Item & Price Alignment)", "ok")
+                ],
+                "sim_footer_speed": "3.4s",
+                "sim_footer_status": "Ready to Post to ERP"
+            },
+            {
+                "id": "logistics",
+                "label": "Logistics & Operations",
+                "icon": "truck",
+                "badge": "Logistics & Dispatch Automation",
+                "headline": "Keep drivers, dispatchers, and clients in sync with real-time POD capture and manifest OCR.",
+                "desc": "Delivery notes, customs clearance forms, and bills of lading are ingested instantly. Drivers upload delivery photos via WhatsApp, and our agent extracts the signature, stamps time & GPS coordinates, updates the dispatch console, and notifies the client.",
+                "metrics": [
+                    ("zap", "12 mins saved per delivery"),
+                    ("badge-check", "Zero lost delivery slips")
+                ],
+                "steps": [
+                    "Parses scanned delivery notes, customs bills, and shipping manifests",
+                    "Extracts driver signatures and proof of delivery (POD) from photos",
+                    "Live updates shipment status in your fleet management system",
+                    "Sends automatic WhatsApp delivery confirmation to the recipient",
+                    "Triggers instant customer billing upon verified delivery"
+                ],
+                "sim_title": "toco-agent / dispatch-telemetry",
+                "sim_status": "POD Confirmed",
+                "sim_rows": [
+                    ("Shipment Ref", "Shipment #DXB-9921 · JAFZA South Zone 4", "normal"),
+                    ("Driver Upload", "Delivery Note #DN-5541 (WhatsApp Photo Received)", "normal"),
+                    ("Signature OCR", "Customer Signature Verified & Time-stamped (14:32 GST)", "ok"),
+                    ("Warehouse ERP", "Inventory Decremented & Manifest Closed", "ok"),
+                    ("Client Alert", "WhatsApp delivery confirmation dispatched with signed POD", "accent")
+                ],
+                "sim_footer_speed": "2.1s",
+                "sim_footer_status": "Dispatch Status: Delivered"
+            },
+            {
+                "id": "sales",
+                "label": "Sales & Inquiries",
+                "icon": "message",
+                "badge": "Sales & Pipeline Automation",
+                "headline": "Qualify, quote, and schedule warm inbound inquiries within 20 seconds, 24 hours a day.",
+                "desc": "Never lose a prospective client to delayed follow-ups. Our sales agents respond instantly across WhatsApp, web forms, and email, answer technical product questions, qualify budget and timeline, and draft tailored PDF quotations.",
+                "metrics": [
+                    ("zap", "18-second response latency"),
+                    ("trending-up", "3.2x higher consultation booking rate")
+                ],
+                "steps": [
+                    "Instant conversational greeting and intent detection on WhatsApp",
+                    "Intelligent qualification based on service scope, budget, and urgency",
+                    "Real-time calendar availability check and meeting booking",
+                    "Instant quotation PDF generation based on pricing matrix",
+                    "Automatic CRM contact and deal stage creation"
+                ],
+                "sim_title": "toco-agent / sales-concierge",
+                "sim_status": "Response: 18s",
+                "sim_rows": [
+                    ("Client Inquiry", "Hi, we need custom ERP software for 40 users in Business Bay", "normal"),
+                    ("AI Response", "Hello! We engineer custom ERPs with UAE VAT & WPS. What is your rollout timeline?", "accent"),
+                    ("Qualification Score", "92/100 (Enterprise Tier, High Intent)", "ok"),
+                    ("Action Taken", "Meeting booked on Senior Engineer calendar", "ok"),
+                    ("CRM Update", "Deal created in Zoho CRM (AED 35,000 Pipeline)", "normal")
+                ],
+                "sim_footer_speed": "18s",
+                "sim_footer_status": "Calendar Invite Dispatched"
+            },
+            {
+                "id": "hr",
+                "label": "HR & Administration",
+                "icon": "users",
+                "badge": "HR & Workforce Automation",
+                "headline": "Eliminate repetitive paperwork, visa tracking, and compliance checks from your HR desk.",
+                "desc": "Automate Emirates ID renewals, visa expiries, and MOHRE labour compliance. New joiners upload their documents via a simple link, and our agent verifies validity, generates employment contracts, and provisions company accounts.",
+                "metrics": [
+                    ("zap", "100% On-time visa renewals"),
+                    ("shield", "Zero MOHRE fines")
+                ],
+                "steps": [
+                    "Automated Emirates ID & passport expiry sentinel monitoring",
+                    "Document OCR extraction for new hire onboarding paperwork",
+                    "Automated MOHRE labour contract drafting & compliance verification",
+                    "Instant leave request routing and balance calculation",
+                    "Employee policy Q&A assistant trained on your staff handbook"
+                ],
+                "sim_title": "toco-agent / hr-compliance",
+                "sim_status": "Sentinel Active",
+                "sim_rows": [
+                    ("Expiry Detection", "Emirates ID for 3 employees expiring in < 30 days", "normal"),
+                    ("Action Triggered", "Automated WhatsApp renewal checklist sent to employee", "accent"),
+                    ("Document Upload", "Passport copy & photo received and verified via OCR", "ok"),
+                    ("MOHRE Check", "WPS salary compliance validated for upcoming cycle", "ok"),
+                    ("HR Dossier", "Renewal dossier compiled and assigned to PRO for submission", "normal")
+                ],
+                "sim_footer_speed": "Continuous",
+                "sim_footer_status": "0 Non-Compliance Violations"
+            }
+        ]
     }
 }
 
@@ -91,9 +208,18 @@ def build(slug):
                     "name": "TOCO Technologies",
                     "telephone": "+971-4-577-0725",
                     "email": "info@tocoplus.com",
-                    "address": {"@type": "PostalAddress", "streetAddress": "Port Saeed", "addressLocality": "Dubai", "addressCountry": "AE"},
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Port Saeed",
+                        "addressLocality": "Dubai",
+                        "addressCountry": "AE"
+                    },
                 },
-                "areaServed": [{"@type": "City", "name": "Dubai"}, {"@type": "City", "name": "Abu Dhabi"}, {"@type": "Country", "name": "United Arab Emirates"}],
+                "areaServed": [
+                    {"@type": "City", "name": "Dubai"},
+                    {"@type": "City", "name": "Abu Dhabi"},
+                    {"@type": "Country", "name": "United Arab Emirates"}
+                ],
             },
             make_breadcrumb_schema(crumbs),
             make_faq_schema(svc["faqs"]),
@@ -103,8 +229,10 @@ def build(slug):
     check = svg("check")
     arrow = '<svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
+    # Hero points
     points = "".join(f"<span>{check}{p}</span>" for p in x["hero_points"])
 
+    # Hero console nodes
     nodes = ""
     for ico, title, sub, st, label in x["console"]:
         nodes += f'''                <div class="sv-node{' is-run' if st == 'run' else ''}">
@@ -113,33 +241,94 @@ def build(slug):
                   <span class="st {st}">{label}</span>
                 </div>\n'''
 
-    names = "".join(f"<span>{i}</span>" for i in x["integrations"])
-    ticker = names + names.replace("<span>", '<span aria-hidden="true">')
+    # Integrations Marquee
+    integrations_items = "".join(f'<span class="sv-stack-chip">{svg("zap")}{i}</span>' for i in x["integrations"])
+    integrations_html = integrations_items + integrations_items.replace('<span class="sv-stack-chip">', '<span class="sv-stack-chip" aria-hidden="true">')
 
-    feats = svc["features"]
-    agents = "".join(
-        f'<div class="sv-agent"><b>{n}</b><small>{d}</small><div class="bar"><span style="width:{w}%"></span></div></div>'
-        for n, d, w in x["agents"]
-    )
-    caps = ""
-    for i, f in enumerate(feats, 1):
-        caps += f'''            <li class="sv-li rv">
-              <span class="sv-li-num">{i:02d}</span>
-              <div>
-                <h3>{_ico(f["icon"])}{f["title"]}</h3>
-                <p>{f["desc"]}</p>
+    # Bento Grid Capabilities
+    bento_html = f'''        <div class="sv-bento-grid">
+          <!-- Bento 1: Large Featured Multi-Agent (Spans 2 cols) -->
+          <article class="bento-card bento-wide is-featured rv">
+            <div class="bento-top">
+              <span class="bento-badge">{svg("bot")}MULTI-AGENT ARCHITECTURE</span>
+              <h3>Autonomous Multi-Agent Orchestration</h3>
+              <p>We deploy specialized deterministic agents coordinated by an intelligent supervisor. Each agent handles a single task under strict validation rules, with zero hallucinatory drift and full cryptographic audit logging.</p>
+            </div>
+            <div class="bento-agent-telemetry">
+              <div class="agent-bar-row">
+                <div class="agent-info"><b>Intake Agent</b><small>Ingests email PDFs &amp; WhatsApp</small></div>
+                <div class="agent-track"><span style="width: 94%;"></span></div>
+                <span class="agent-pct">94% active</span>
               </div>
-            </li>\n'''
+              <div class="agent-bar-row">
+                <div class="agent-info"><b>Validation Agent</b><small>Enforces UAE TRN &amp; 5% VAT rules</small></div>
+                <div class="agent-track"><span style="width: 78%;"></span></div>
+                <span class="agent-pct">78% active</span>
+              </div>
+              <div class="agent-bar-row">
+                <div class="agent-info"><b>Posting Agent</b><small>Direct REST API sync to ERP</small></div>
+                <div class="agent-track"><span style="width: 62%;"></span></div>
+                <span class="agent-pct">62% active</span>
+              </div>
+            </div>
+          </article>
 
-    x_ico, arr_r = svg("x"), svg("arrow-up-right")
-    vs_rows = ""
-    for b, a in zip(x["before"], x["after"]):
-        vs_rows += f'''          <div class="sv-vs-row rv">
-            <p class="sv-vs-old">{x_ico}<span>{b}</span></p>
-            <span class="sv-vs-arrow">{svg("zap")}</span>
-            <p class="sv-vs-new">{check}<span>{a}</span></p>
-          </div>\n'''
+          <!-- Bento 2: Vision OCR (Spans 1 col) -->
+          <article class="bento-card is-tech rv">
+            <div class="bento-top">
+              <span class="bento-badge">{svg("file-text")}DOCUMENT INTELLIGENCE</span>
+              <h3>Document Vision &amp; Arabic OCR</h3>
+              <p>Extract line items, tax numbers, and vendor details from Arabic &amp; English PDFs with 99.4% precision.</p>
+            </div>
+            <div class="bento-mini-mockup">
+              <div class="ocr-preview">
+                <div class="ocr-tag">TRN: 100234891000003</div>
+                <div class="ocr-val">VAT 5%: AED 1,450.00</div>
+                <div class="ocr-status ok">{svg("check")} Validated FTA Registry</div>
+              </div>
+            </div>
+          </article>
 
+          <!-- Bento 3: Human Safeguards (Spans 1 col) -->
+          <article class="bento-card is-tech rv">
+            <div class="bento-top">
+              <span class="bento-badge">{svg("message")}ZERO FRICTION</span>
+              <h3>Human-in-the-Loop Sign-offs</h3>
+              <p>Never let AI make blind decisions. When an order or invoice exceeds thresholds, managers receive a 1-tap WhatsApp approval.</p>
+            </div>
+            <div class="bento-mini-mockup">
+              <div class="wa-preview">
+                <div class="wa-msg">Invoice #AE-894 exceeds AED 20,000 threshold. Approve payment?</div>
+                <div class="wa-actions">
+                  <span class="wa-btn ok">Approve</span>
+                  <span class="wa-btn flag">Inspect</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 4: Security & UAE Data Sovereignty (Spans 2 cols) -->
+          <article class="bento-card bento-wide is-security rv">
+            <div class="bento-top">
+              <span class="bento-badge">{svg("shield")}UAE ENTERPRISE COMPLIANCE</span>
+              <h3>UAE Data Sovereignty &amp; Private VPC Deployment</h3>
+              <p>Host models within UAE borders (AWS Middle East UAE or Azure UAE Central), fully compliant with UAE Federal Decree-Law No. 45 on Personal Data Protection. Zero training on your proprietary corporate records.</p>
+            </div>
+            <div class="security-cluster">
+              <div class="sec-pill">{svg("lock")}<span>AES-256 Cloud Encryption</span></div>
+              <div class="sec-pill">{svg("map-pin")}<span>AWS / Azure UAE Data Residency</span></div>
+              <div class="sec-pill">{svg("shield")}<span>Zero-Retention Corporate APIs</span></div>
+              <div class="sec-pill">{svg("users")}<span>Granular Role-Based Access (RBAC)</span></div>
+            </div>
+          </article>
+        </div>'''
+
+    # Before / After Split Console
+    x_ico = svg("x")
+    before_lis = "".join(f'<li><span class="cross-mk">{x_ico}</span><span>{t}</span></li>' for t in x["before"])
+    after_lis = "".join(f'<li><span class="check-mk">{check}</span><span>{t}</span></li>' for t in x["after"])
+
+    # Implementation Timeline
     steps = ""
     for i, s_ in enumerate(svc["steps"]):
         steps += f'''          <div class="sv-step rv">
@@ -149,48 +338,150 @@ def build(slug):
             <p>{s_["desc"]}</p>
           </div>\n'''
 
+    # Results command center
     results = "".join(
         f'<div class="sv-res rv"><b>{b["metric"]}</b><h3>{b["title"]}</h3><p>{b["desc"]}</p></div>'
         for b in svc["benefits"]
     )
 
-    tabs, panels = "", ""
-    for i, (ico, title, desc, items) in enumerate(x["use_cases"]):
-        sel = i == 0
-        tabs += (f'<button class="sv-tab" type="button" role="tab" id="uc-tab-{i}" aria-controls="uc-panel-{i}" '
-                 f'aria-selected="{"true" if sel else "false"}" tabindex="{0 if sel else -1}">{svg(ico)}<span>{title}</span></button>\n')
-        track = "".join(f'<li><span class="sv-dot"></span><span>{it}</span><em>Automated</em></li>' for it in items)
-        panels += f'''            <div class="sv-panel" role="tabpanel" id="uc-panel-{i}" aria-labelledby="uc-tab-{i}"{"" if sel else " hidden"}>
-              <span class="sv-panel-k">{svg(ico)}{title}</span>
-              <h3>{desc}</h3>
-              <ol class="sv-track">{track}</ol>
-              <a href="/contact" class="sv-panel-link">Discuss this workflow {svg("arrow-up-right")}</a>
-            </div>\n'''
+    # Department Workflow Studio (Replaces 4 uniform boxes from Screenshot 1)
+    studio_tabs = ""
+    studio_panels = ""
+    for i, dept in enumerate(x["departments"]):
+        is_first = (i == 0)
+        active_class = " active" if is_first else ""
+        selected_attr = "true" if is_first else "false"
+        tabindex_attr = "0" if is_first else "-1"
+        hidden_attr = "" if is_first else " hidden"
 
+        studio_tabs += f'''        <button class="sv-tab-btn{active_class}" type="button" role="tab" id="tab-{dept["id"]}" aria-controls="panel-{dept["id"]}" aria-selected="{selected_attr}" tabindex="{tabindex_attr}" data-tab="panel-{dept["id"]}">
+          {svg(dept["icon"])}
+          <span>{dept["label"]}</span>
+        </button>\n'''
+
+        metrics_html = "".join(f'<span class="sv-metric-chip">{svg(m_ico)}<span>{m_lbl}</span></span>' for m_ico, m_lbl in dept["metrics"])
+        steps_html = "".join(f'''              <div class="sv-studio-step">
+                <span class="step-idx">{idx:02d}</span>
+                <span>{step_text}</span>
+              </div>\n''' for idx, step_text in enumerate(dept["steps"], 1))
+
+        sim_rows_html = ""
+        for k, v, tone in dept["sim_rows"]:
+            tone_class = f" {tone}" if tone != "normal" else ""
+            sim_rows_html += f'''                <div class="sv-sim-row">
+                  <span class="k">{k}</span>
+                  <span class="v{tone_class}">{v}</span>
+                </div>\n'''
+
+        studio_panels += f'''        <div class="sv-studio-panel{active_class}" id="panel-{dept["id"]}" role="tabpanel" aria-labelledby="tab-{dept["id"]}"{hidden_attr}>
+          <!-- Left Pane: Department Overview & Workflow Steps -->
+          <div class="sv-pane-content">
+            <div>
+              <span class="sv-studio-badge">{svg(dept["icon"])} {dept["badge"]}</span>
+              <h3>{dept["headline"]}</h3>
+              <p class="sv-studio-desc">{dept["desc"]}</p>
+              <div class="sv-studio-metrics">
+                {metrics_html}
+              </div>
+              <div class="sv-studio-steps">
+                {steps_html}
+              </div>
+            </div>
+            <a href="/contact" class="sv-studio-link">
+              <span>Discuss this workflow with an engineer</span>
+              {svg("arrow-up-right")}
+            </a>
+          </div>
+
+          <!-- Right Pane: Live Department Simulation Console -->
+          <div class="sv-pane-preview" aria-hidden="true">
+            <div class="sv-sim-card">
+              <div class="sv-sim-header">
+                <div class="sv-sim-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div style="font-family:ui-monospace,monospace;color:#94A3B8;font-size:11.5px;">{dept["sim_title"]}</div>
+                <span class="sv-sim-badge">{dept["sim_status"]}</span>
+              </div>
+              <div class="sv-sim-body">
+{sim_rows_html}              </div>
+              <div class="sv-sim-footer">
+                <span>Speed: <strong class="speed">{dept["sim_footer_speed"]}</strong></span>
+                <span>Status: <strong>{dept["sim_footer_status"]}</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>\n'''
+
+    # FAQs
     faqs = ""
     for i, q in enumerate(svc["faqs"]):
-        first = i == 0
+        first = (i == 0)
         faqs += f'''            <div class="faq-item{' open' if first else ''}">
               <button class="faq-q" type="button" aria-expanded="{'true' if first else 'false'}"><span>{q["q"]}</span><i></i></button>
               <div class="faq-a" style="{'max-height:260px;' if first else ''}"><div class="faq-a-inner"><p>{q["a"]}</p></div></div>
             </div>\n'''
 
-    go = svg("arrow-up-right")
-    related = ""
-    for i, r in enumerate(svc["related"], 1):
-        kind = "Product" if r["url"].startswith("/products") else ("Case studies" if r["url"] == "/portfolio" else "Service")
-        related += f'''          <a href="{r["url"]}" class="sv-link rv">
-            <span class="sv-link-k">{i:02d} &middot; {kind}</span>
-            <span class="sv-link-t">{r["title"]}</span>
-            <span class="sv-link-d">{r["desc"]}</span>
-            <span class="sv-link-go">{go}</span>
-          </a>\n'''
+    # High-Variety Related Cards (Replaces 3 uniform boxes from Screenshot 2)
+    related_html = f'''        <div class="sv-rel-grid">
+          <!-- Card 1: AI Business Conversions (Featured Royal Navy Glow) -->
+          <a href="/services/ai-business-automation" class="sv-rel-card is-featured rv">
+            <div>
+              <span class="rel-tag">{svg("zap")} SERVICE &bull; SALES ACCELERATION</span>
+              <h3>AI Business Conversions</h3>
+              <p>Turn web visitors and WhatsApp inquiries into verified business opportunities with autonomous qualification agents.</p>
+              <div class="rel-mockup">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:11.5px;margin-bottom:4px;">
+                  <span>Inbound Lead</span>
+                  <span style="color:#60A5FA;">18s WhatsApp AI</span>
+                  <span style="color:#34D399;">✓ Qualified Deal</span>
+                </div>
+                <div style="height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;">
+                  <div style="width:75%;height:100%;background:linear-gradient(90deg, #3B82F6, #10B981);"></div>
+                </div>
+              </div>
+            </div>
+            <span class="rel-action"><span>Explore Sales Automation</span>{svg("arrow-up-right")}</span>
+          </a>
+
+          <!-- Card 2: Custom ERP & Business Software (Technical Blueprint) -->
+          <a href="/services/erp-and-custom-software" class="sv-rel-card is-tech rv">
+            <div>
+              <span class="rel-tag">{svg("building")} SERVICE &bull; ENTERPRISE CORE</span>
+              <h3>Custom ERP &amp; Software</h3>
+              <p>Unify your business operations with bespoke ERP suites, dispatch platforms, and custom REST API integrations.</p>
+              <div class="rel-mockup">
+                <div style="display:flex;align-items:center;gap:8px;font-family:ui-monospace,monospace;font-size:11px;color:#334155;">
+                  <span style="width:7px;height:7px;border-radius:50%;background:#10B981;display:inline-block;"></span>
+                  <span>PostgreSQL &harr; ERP &harr; Dispatch Live Sync (12ms)</span>
+                </div>
+              </div>
+            </div>
+            <span class="rel-action"><span>Explore Custom ERP</span>{svg("arrow-up-right")}</span>
+          </a>
+
+          <!-- Card 3: Payroll Automation Platform (High-Trust Compliance) -->
+          <a href="/products/payroll-automation" class="sv-rel-card is-compliance rv">
+            <div>
+              <span class="rel-tag">{svg("shield")} PRODUCT &bull; UAE WPS COMPLIANT</span>
+              <h3>Payroll Automation Platform</h3>
+              <p>Engineered specifically for UAE labor law, Ministry of Human Resources (MOHRE) compliance, and 1-click SIF file generation.</p>
+              <div class="rel-mockup">
+                <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#047857;">
+                  {svg("badge-check")}
+                  <span>1-Click SIF File Generated &bull; 100% Validated</span>
+                </div>
+              </div>
+            </div>
+            <span class="rel-action"><span>View Payroll Software</span>{svg("arrow-up-right")}</span>
+          </a>
+        </div>'''
 
     html = f'''{render_head_tags(svc["title"], svc["meta_desc"], canonical, schema)}
 {render_header("services")}
 
   <main id="main-content">
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="page-hero sv-hero">
       <div class="wrap">
         {render_breadcrumbs(crumbs)}
@@ -208,7 +499,7 @@ def build(slug):
 
           <div class="sv-visual" aria-hidden="true">
             <div class="sv-console">
-              <div class="sv-console-bar"><i></i><i></i><i></i><span>agent / invoice-pipeline</span><span class="live">Live</span></div>
+              <div class="sv-console-bar"><i></i><i></i><i></i><span>agent / invoice-pipeline.py</span><span class="live">Live</span></div>
               <div class="sv-flow">
 {nodes}              </div>
               <div class="sv-progress"><span></span></div>
@@ -220,105 +511,128 @@ def build(slug):
       </div>
     </section>
 
-    <!-- INTEGRATIONS STRIP -->
+    <!-- INTEGRATIONS TICKER -->
     <section class="sv-strip theme-light">
       <div class="wrap">
         <span class="sv-strip-label">Connects with your stack</span>
-        <div class="sv-strip-list">{integrations}</div>
+        <div class="sv-strip-track">
+          <div class="sv-strip-inner">
+            {integrations_html}
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- CAPABILITIES (BENTO) -->
-    <section class="sv-sec theme-light">
+    <!-- ENTERPRISE CAPABILITIES (ASYMMETRIC BENTO GRID) -->
+    <section class="sv-sec theme-light" id="capabilities">
       <div class="wrap">
         <div class="sv-head">
           <div>
-            <div class="eyebrow">What we build</div>
-            <h2>Automation that does the work, not just the reporting</h2>
+            <div class="eyebrow">Enterprise Capabilities</div>
+            <h2>Automation that executes the work, not just reports on it</h2>
           </div>
-          <p>Production-grade agents and pipelines, designed around how your team already works in Dubai and across the UAE.</p>
+          <p>Production-grade agent architecture engineered around how UAE enterprises actually operate in Dubai and across the GCC.</p>
         </div>
-        <div class="sv-bento">
-{bento}        </div>
+{bento_html}
       </div>
     </section>
 
-    <!-- BEFORE / AFTER -->
-    <section class="sv-sec theme-alt">
+    <!-- OPERATIONAL COMPARISON: BEFORE VS AFTER -->
+    <section class="sv-sec theme-alt" id="the-difference">
       <div class="wrap">
         <div class="sv-head center">
           <div>
-            <div class="eyebrow">The difference</div>
-            <h2>From manual hand-offs to hands-free operations</h2>
+            <div class="eyebrow">The Difference</div>
+            <h2>From Manual Bottlenecks to Hands-Free Velocity</h2>
           </div>
-          <p>What changes for your team on day one of going live.</p>
+          <p>What changes for your operational team on day one of going live.</p>
         </div>
-        <div class="sv-compare">
-          <div class="sv-col before rv">
-            <h3><span class="sv-tag">Today</span>Manual process</h3>
-            <ul>{before}</ul>
+        <div class="sv-compare-console">
+          <div class="sv-compare-card is-before rv">
+            <div class="compare-badge is-before">{svg("x")} TODAY &bull; MANUAL PROCESS</div>
+            <h3>Fragile Manual Operations</h3>
+            <ul class="compare-list">
+              {before_lis}
+            </ul>
           </div>
-          <div class="sv-col after rv">
-            <h3><span class="sv-tag">With TOCO</span>AI-automated</h3>
-            <ul>{after}</ul>
+
+          <div class="sv-compare-divider">
+            <span class="compare-trans-icon">{svg("zap")}</span>
+            <span class="compare-trans-lbl">AI Shift</span>
+          </div>
+
+          <div class="sv-compare-card is-after rv">
+            <div class="compare-badge is-after">{svg("check")} WITH TOCO &bull; AUTONOMOUS AI</div>
+            <h3>Intelligent Agent Workflows</h3>
+            <ul class="compare-list">
+              {after_lis}
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS TIMELINE -->
-    <section class="sv-sec theme-dark">
+    <!-- USE CASES: THE DEPARTMENT WORKFLOW STUDIO -->
+    <section class="sv-sec theme-light" id="use-cases">
       <div class="wrap">
         <div class="sv-head">
           <div>
-            <div class="eyebrow">How it works</div>
-            <h2>Live in weeks, not quarters</h2>
+            <div class="eyebrow">Use Cases by Department</div>
+            <h2>Where UAE Teams Start Automating</h2>
           </div>
-          <p>A phased rollout with a working pilot first, so you see real results before committing to the full build.</p>
+          <p>Select a department below to explore how custom autonomous agents transform day-to-day operations.</p>
+        </div>
+
+        <div class="sv-studio">
+          <!-- Segmented Tab Navigation -->
+          <div class="sv-studio-nav" role="tablist" aria-label="Department Automations">
+{studio_tabs}          </div>
+
+          <!-- Studio Canvas & Dynamic Showcase -->
+          <div class="sv-studio-canvas">
+{studio_panels}          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPLEMENTATION METHODOLOGY -->
+    <section class="sv-sec theme-dark" id="how-it-works">
+      <div class="wrap">
+        <div class="sv-head">
+          <div>
+            <div class="eyebrow">How It Works</div>
+            <h2>Live in Weeks, Not Quarters</h2>
+          </div>
+          <p>A phased rollout with a working sandbox pilot first, ensuring proven ROI before full commitment.</p>
         </div>
         <div class="sv-timeline">
 {steps}        </div>
       </div>
     </section>
 
-    <!-- RESULTS -->
-    <section class="sv-sec theme-blue">
+    <!-- MEASURABLE RESULTS -->
+    <section class="sv-sec theme-blue" id="results">
       <div class="wrap">
         <div class="sv-head">
           <div>
-            <div class="eyebrow">Results</div>
-            <h2>What automation changes in the numbers</h2>
+            <div class="eyebrow">Measurable Outcomes</div>
+            <h2>Verified Impact on Operational Numbers</h2>
           </div>
-          <p>The outcomes we design and measure every automation against.</p>
+          <p>The commercial metrics we engineer and guarantee every automation against.</p>
         </div>
         <div class="sv-results">{results}</div>
       </div>
     </section>
 
-    <!-- USE CASES -->
-    <section class="sv-sec theme-light">
-      <div class="wrap">
-        <div class="sv-head">
-          <div>
-            <div class="eyebrow">Use cases</div>
-            <h2>Where UAE teams start automating</h2>
-          </div>
-          <p>Common first projects, by department. Most clients begin with one workflow and expand from there.</p>
-        </div>
-        <div class="sv-cases">
-{cases}        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="sv-sec theme-alt">
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="sv-sec theme-alt" id="faq">
       <div class="wrap sv-faq">
         <div>
-          <div class="eyebrow">FAQ</div>
-          <h2 style="font-size:clamp(30px,3.6vw,46px);margin-top:14px;letter-spacing:-.03em;">Questions we hear from Dubai teams</h2>
+          <div class="eyebrow">Commercial FAQs</div>
+          <h2 style="font-size:clamp(30px,3.6vw,46px);margin-top:14px;letter-spacing:-.03em;">Questions We Hear from Dubai Teams</h2>
           <div class="sv-help">
-            <h3>Still have a question?</h3>
-            <p>Talk to an engineer, not a salesperson. We reply within one business day.</p>
+            <h3>Have a custom workflow in mind?</h3>
+            <p>Talk directly with an automation engineer in Port Saeed, Dubai. We reply within one business day.</p>
             <a href="https://wa.me/97145770725" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><span>Message us on WhatsApp</span>{arrow}</a>
           </div>
         </div>
@@ -327,21 +641,21 @@ def build(slug):
       </div>
     </section>
 
-    <!-- RELATED -->
-    <section class="sv-sec theme-light">
+    <!-- RELATED SERVICES & PRODUCTS (HIGH-VARIETY CARDS) -->
+    <section class="sv-sec theme-light" id="related">
       <div class="wrap">
         <div class="sv-head">
           <div>
-            <div class="eyebrow">Keep exploring</div>
-            <h2>Related services &amp; products</h2>
+            <div class="eyebrow">Explore the Ecosystem</div>
+            <h2>Related Services &amp; Enterprise Software</h2>
           </div>
+          <p>Connect your automated workflows across our unified digital and software ecosystem.</p>
         </div>
-        <div class="sv-related">
-{related}        </div>
+{related_html}
       </div>
     </section>
 
-    {render_cta_band("Ready to hand repetitive work to AI?", "Book a free automation audit with our Port Saeed team. We'll map your workflows and show you where AI pays back fastest.")}
+    {render_cta_band("Ready to Hand Repetitive Work to AI?", "Book a free automation audit with our Port Saeed team. We'll map your workflows and show you where AI pays back fastest.")}
   </main>
 
 {render_footer()}
@@ -362,4 +676,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

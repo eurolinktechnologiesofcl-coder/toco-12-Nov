@@ -465,4 +465,36 @@
     el.textContent = currentYear;
   });
 
+  /* --------------------------------------------------------------------------
+     11. Department Workflow Studio Tabs (Service V2)
+     -------------------------------------------------------------------------- */
+  const studioTabs = document.querySelectorAll('.sv-tab-btn');
+  const studioPanels = document.querySelectorAll('.sv-studio-panel');
+  if (studioTabs.length && studioPanels.length) {
+    studioTabs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const targetId = btn.getAttribute('data-tab');
+        studioTabs.forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+          b.setAttribute('tabindex', '-1');
+        });
+        studioPanels.forEach(function (p) {
+          p.classList.remove('active');
+          p.hidden = true;
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        btn.setAttribute('tabindex', '0');
+        const activePanel = document.getElementById(targetId);
+        if (activePanel) {
+          activePanel.hidden = false;
+          requestAnimationFrame(function () {
+            activePanel.classList.add('active');
+          });
+        }
+      });
+    });
+  }
+
 })();
