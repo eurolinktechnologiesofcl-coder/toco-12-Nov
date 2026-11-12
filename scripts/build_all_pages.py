@@ -1499,7 +1499,7 @@ def build_homepage():
               <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cyan);margin-right:6px;box-shadow:0 0 8px var(--cyan);"></span>
               DUBAI &amp; UAE ENTERPRISE TECHNOLOGY PARTNER
             </div>
-            <h1>Engineering AI Business Automation &amp; High-Impact Software in Dubai</h1>
+            <h1>Engineering <span class="grad-text">AI Business Automation</span> &amp; High-Impact Software in Dubai</h1>
             <p class="lede">
               We build powerful websites, intelligent AI applications, custom ERPs, and conversion-engineered digital experiences that help UAE businesses connect, automate, and grow.
             </p>
@@ -2317,6 +2317,10 @@ def main():
     build_legal_and_404()
     build_homepage()
     build_sitemap_and_robots()
+
+    # Assign white / black / blue palettes to every section
+    from apply_theme import main as apply_theme
+    apply_theme()
 
     print("ALL 26 STATIC PAGES GENERATED SUCCESSFULLY!")
 
