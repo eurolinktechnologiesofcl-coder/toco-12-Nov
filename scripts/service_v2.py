@@ -52,10 +52,10 @@ EXTRA = {
         ],
         "durations": ["Days 1–5", "Days 6–14", "Weeks 3–4", "Launch + 30 days"],
         "use_cases": [
-            ("wallet", "Finance & accounts", ["Invoice capture & PO matching", "VAT and TRN checks", "Bank reconciliation", "Payment reminders"]),
-            ("truck", "Logistics & operations", ["Delivery notes & POD capture", "Dispatch status updates", "Customs document checks", "Stock alerts"]),
-            ("message", "Sales & customer service", ["Inbox triage & routing", "Quotation drafting", "CRM updates", "Follow-up sequences"]),
-            ("users", "HR & administration", ["Visa & Emirates ID checks", "Onboarding packs", "Leave requests", "Policy Q&A assistant"]),
+            ("wallet", "Finance & accounts", "Close the books faster with documents that read, check and post themselves.", ["Invoice capture & PO matching", "VAT and TRN checks", "Bank reconciliation", "Payment reminders"]),
+            ("truck", "Logistics & operations", "Keep dispatch, drivers and customers in sync without manual updates.", ["Delivery notes & POD capture", "Dispatch status updates", "Customs document checks", "Stock alerts"]),
+            ("message", "Sales & customer service", "Answer, route and follow up on every enquiry while it is still warm.", ["Inbox triage & routing", "Quotation drafting", "CRM updates", "Follow-up sequences"]),
+            ("users", "HR & administration", "Take repetitive paperwork off your HR team's desk.", ["Visa & Emirates ID checks", "Onboarding packs", "Leave requests", "Policy Q&A assistant"]),
         ],
     }
 }
@@ -113,37 +113,40 @@ def build(slug):
                   <span class="st {st}">{label}</span>
                 </div>\n'''
 
-    integrations = "".join(f"<span>{i}</span>" for i in x["integrations"])
+    names = "".join(f"<span>{i}</span>" for i in x["integrations"])
+    ticker = names + names.replace("<span>", '<span aria-hidden="true">')
 
     feats = svc["features"]
     agents = "".join(
         f'<div class="sv-agent"><b>{n}</b><small>{d}</small><div class="bar"><span style="width:{w}%"></span></div></div>'
         for n, d, w in x["agents"]
     )
-    bento = f'''          <article class="sv-b big rv">
-            <span class="ico-tile">{_ico(feats[0]["icon"])}</span>
-            <h3>{x["big_title"]}</h3>
-            <p>{x["big_desc"]}</p>
-            <div class="sv-agents">{agents}</div>
-          </article>\n'''
-    for f in feats[1:]:
-        bento += f'''          <article class="sv-b rv">
-            <span class="ico-tile">{_ico(f["icon"])}</span>
-            <h3>{f["title"]}</h3>
-            <p>{f["desc"]}</p>
-          </article>\n'''
+    caps = ""
+    for i, f in enumerate(feats, 1):
+        caps += f'''            <li class="sv-li rv">
+              <span class="sv-li-num">{i:02d}</span>
+              <div>
+                <h3>{_ico(f["icon"])}{f["title"]}</h3>
+                <p>{f["desc"]}</p>
+              </div>
+            </li>\n'''
 
-    x_ico = svg("x")
-    before = "".join(f'<li><span class="mk">{x_ico}</span>{t}</li>' for t in x["before"])
-    after = "".join(f'<li><span class="mk">{check}</span>{t}</li>' for t in x["after"])
+    x_ico, arr_r = svg("x"), svg("arrow-up-right")
+    vs_rows = ""
+    for b, a in zip(x["before"], x["after"]):
+        vs_rows += f'''          <div class="sv-vs-row rv">
+            <p class="sv-vs-old">{x_ico}<span>{b}</span></p>
+            <span class="sv-vs-arrow">{svg("zap")}</span>
+            <p class="sv-vs-new">{check}<span>{a}</span></p>
+          </div>\n'''
 
     steps = ""
-    for i, s in enumerate(svc["steps"]):
+    for i, s_ in enumerate(svc["steps"]):
         steps += f'''          <div class="sv-step rv">
-            <div class="dot">{s["num"]}</div>
+            <div class="dot">{s_["num"]}</div>
             <span class="when">{x["durations"][i]}</span>
-            <h3>{s["title"]}</h3>
-            <p>{s["desc"]}</p>
+            <h3>{s_["title"]}</h3>
+            <p>{s_["desc"]}</p>
           </div>\n'''
 
     results = "".join(
@@ -151,15 +154,18 @@ def build(slug):
         for b in svc["benefits"]
     )
 
-    small_check = svg("check")
-    cases = ""
-    for ico, title, items in x["use_cases"]:
-        lis = "".join(f"<li>{small_check}{it}</li>" for it in items)
-        cases += f'''          <article class="sv-case rv">
-            <span class="ico-tile">{svg(ico)}</span>
-            <h3>{title}</h3>
-            <ul>{lis}</ul>
-          </article>\n'''
+    tabs, panels = "", ""
+    for i, (ico, title, desc, items) in enumerate(x["use_cases"]):
+        sel = i == 0
+        tabs += (f'<button class="sv-tab" type="button" role="tab" id="uc-tab-{i}" aria-controls="uc-panel-{i}" '
+                 f'aria-selected="{"true" if sel else "false"}" tabindex="{0 if sel else -1}">{svg(ico)}<span>{title}</span></button>\n')
+        track = "".join(f'<li><span class="sv-dot"></span><span>{it}</span><em>Automated</em></li>' for it in items)
+        panels += f'''            <div class="sv-panel" role="tabpanel" id="uc-panel-{i}" aria-labelledby="uc-tab-{i}"{"" if sel else " hidden"}>
+              <span class="sv-panel-k">{svg(ico)}{title}</span>
+              <h3>{desc}</h3>
+              <ol class="sv-track">{track}</ol>
+              <a href="/contact" class="sv-panel-link">Discuss this workflow {svg("arrow-up-right")}</a>
+            </div>\n'''
 
     faqs = ""
     for i, q in enumerate(svc["faqs"]):
@@ -171,11 +177,13 @@ def build(slug):
 
     go = svg("arrow-up-right")
     related = ""
-    for r in svc["related"]:
+    for i, r in enumerate(svc["related"], 1):
         kind = "Product" if r["url"].startswith("/products") else ("Case studies" if r["url"] == "/portfolio" else "Service")
-        related += f'''          <a href="{r["url"]}" class="sv-rel rv">
-            <div><small>{kind}</small><h3>{r["title"]}</h3><p>{r["desc"]}</p></div>
-            <span class="go2">{go}</span>
+        related += f'''          <a href="{r["url"]}" class="sv-link rv">
+            <span class="sv-link-k">{i:02d} &middot; {kind}</span>
+            <span class="sv-link-t">{r["title"]}</span>
+            <span class="sv-link-d">{r["desc"]}</span>
+            <span class="sv-link-go">{go}</span>
           </a>\n'''
 
     html = f'''{render_head_tags(svc["title"], svc["meta_desc"], canonical, schema)}
@@ -354,3 +362,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
