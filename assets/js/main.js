@@ -1,0 +1,1052 @@
+/**
+ * TOCO Technologies UAE — Main UI & Interaction Controller (v2)
+ * Pure Vanilla JavaScript (ES6+), Zero External Frameworks
+ */
+(function () {
+  'use strict';
+
+  const docEl = document.documentElement;
+  docEl.classList.add('js-enabled');
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function pad2(num) {
+    return num < 10 ? '0' + num : String(num);
+  }
+
+  /* ------------------------------------------------------------------------
+   * 1. Legacy Hash Route Compatibility (Preserves Indexed Old SPA Hashes)
+   * ---------------------------------------------------------------------- */
+  const legacyRedirects = {
+    '#privacy': 'privacy-policy.html',
+    '#terms': 'terms-of-service.html',
+    '#refund': 'terms-of-service.html#sla'
+  };
+
+  const legacySectionAliases = {
+    '#projects': '#portfolio',
+    '#landing-dubai': '#home',
+    '#blog': '#faq',
+    '#careers': '#contact'
+  };
+
+  /* ------------------------------------------------------------------------
+   * 2. Sticky Header, Back-to-Top & Deterministic Active Section Scroll-Spy
+   * ---------------------------------------------------------------------- */
+  const header = document.getElementById('site-header');
+  const backToTop = document.getElementById('back-to-top');
+  const desktopNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[href^="#"]');
+
+  const sectionMap = [
+    { id: 'home', desktopNav: 'home', mobileNav: 'home' },
+    { id: 'about', desktopNav: 'about', mobileNav: 'about' },
+    { id: 'services', desktopNav: 'services', mobileNav: 'services' },
+    { id: 'why-toco', desktopNav: 'services', mobileNav: 'services' },
+    { id: 'industries', desktopNav: 'industries', mobileNav: 'industries' },
+    { id: 'technologies', desktopNav: 'technologies', mobileNav: 'technologies' },
+    { id: 'portfolio', desktopNav: 'portfolio', mobileNav: 'portfolio' },
+    { id: 'process', desktopNav: 'portfolio', mobileNav: 'portfolio' },
+    { id: 'testimonials', desktopNav: 'portfolio', mobileNav: 'testimonials' },
+    { id: 'faq', desktopNav: 'contact', mobileNav: 'faq' },
+    { id: 'contact', desktopNav: 'contact', mobileNav: 'contact' }
+  ]
+    .map(function (item) {
+      return {
+        el: document.getElementById(item.id),
+        desktopNav: item.desktopNav,
+        mobileNav: item.mobileNav
+      };
+    })
+    .filter(function (item) {
+      return Boolean(item.el);
+    });
+
+  let activeDesktopId = '';
+  let activeMobileId = '';
+  let scrollTicking = false;
+
+  function updateActiveNavByScroll(scrollY) {
+    if (!sectionMap.length) return;
+
+    const probeY = scrollY + window.innerHeight * 0.36;
+    let matched = sectionMap[0];
+
+    for (let i = 0; i < sectionMap.length; i++) {
+      if (sectionMap[i].el.offsetTop <= probeY) {
+        matched = sectionMap[i];
+      }
+    }
+
+    if (window.innerHeight + scrollY >= docEl.scrollHeight - 36) {
+      matched = sectionMap[sectionMap.length - 1];
+    }
+
+    if (matched.desktopNav !== activeDesktopId) {
+      activeDesktopId = matched.desktopNav;
+      desktopNavLinks.forEach(function (link) {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + activeDesktopId);
+      });
+    }
+
+    if (matched.mobileNav !== activeMobileId) {
+      activeMobileId = matched.mobileNav;
+      mobileNavLinks.forEach(function (link) {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + activeMobileId);
+      });
+    }
+  }
+
+  function updateScrollUI() {
+    const y = window.scrollY || window.pageYOffset || 0;
+    if (header) {
+      header.classList.toggle('is-scrolled', y > 32);
+    }
+    if (backToTop) {
+      backToTop.classList.toggle('is-visible', y > 480);
+    }
+    updateActiveNavByScroll(y);
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      window.requestAnimationFrame(updateScrollUI);
+    }
+  }, { passive: true });
+  updateScrollUI();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 3. Mobile Navigation Drawer
+   * ---------------------------------------------------------------------- */
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const drawerBackdrop = document.getElementById('mobile-drawer-backdrop');
+
+  function setDrawerOpen(open) {
+    if (!menuToggle || !mobileDrawer) return;
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mobileDrawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    mobileDrawer.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+  }
+
+  if (menuToggle && mobileDrawer) {
+    menuToggle.addEventListener('click', function () {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      setDrawerOpen(!isOpen);
+    });
+
+    if (drawerBackdrop) {
+      drawerBackdrop.addEventListener('click', function () {
+        setDrawerOpen(false);
+      });
+    }
+
+    mobileDrawer.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setDrawerOpen(false);
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1023 && mobileDrawer.classList.contains('is-open')) {
+        setDrawerOpen(false);
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 4. Scroll-Triggered Reveal Animations
+   * ---------------------------------------------------------------------- */
+  const revealElements = document.querySelectorAll('[data-reveal]');
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach(function (el) {
+      el.classList.add('is-revealed');
+    });
+  } else if (revealElements.length) {
+    const revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay');
+          if (delay) {
+            entry.target.style.setProperty('--reveal-delay', delay + 'ms');
+          }
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -6% 0px',
+      threshold: 0.06
+    });
+
+    revealElements.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 5. Hero Interactive 3-Mode Solution Showcase & Subtle Perspective Tilt
+   * ---------------------------------------------------------------------- */
+  const heroSection = document.getElementById('home');
+  const heroConsole = document.getElementById('hero-console');
+  const heroTabs = Array.from(document.querySelectorAll('[data-hero-tab]'));
+  const heroPanels = Array.from(document.querySelectorAll('[data-hero-panel]'));
+
+  if (heroTabs.length && heroPanels.length) {
+    let activeHeroIdx = 0;
+    let heroAutoTimer = null;
+    let userPickedHeroTab = false;
+    let heroHovered = false;
+
+    function activateHeroTab(index) {
+      activeHeroIdx = (index + heroTabs.length) % heroTabs.length;
+      const targetKey = heroTabs[activeHeroIdx].getAttribute('data-hero-tab');
+
+      heroTabs.forEach(function (tab, idx) {
+        const isCurrent = idx === activeHeroIdx;
+        tab.classList.toggle('is-active', isCurrent);
+        tab.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+      });
+
+      heroPanels.forEach(function (panel) {
+        const matches = panel.getAttribute('data-hero-panel') === targetKey;
+        panel.classList.toggle('is-active', matches);
+      });
+    }
+
+    function startHeroAutoCycle() {
+      if (prefersReducedMotion || userPickedHeroTab || heroAutoTimer) return;
+      heroAutoTimer = window.setInterval(function () {
+        if (!heroHovered && !document.hidden && !userPickedHeroTab) {
+          activateHeroTab(activeHeroIdx + 1);
+        }
+      }, 4800);
+    }
+
+    function stopHeroAutoCycle() {
+      if (heroAutoTimer) {
+        window.clearInterval(heroAutoTimer);
+        heroAutoTimer = null;
+      }
+    }
+
+    heroTabs.forEach(function (tab, idx) {
+      tab.addEventListener('click', function () {
+        userPickedHeroTab = true;
+        stopHeroAutoCycle();
+        activateHeroTab(idx);
+      });
+
+      tab.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          userPickedHeroTab = true;
+          stopHeroAutoCycle();
+          const nextIdx = e.key === 'ArrowRight'
+            ? (idx + 1) % heroTabs.length
+            : (idx - 1 + heroTabs.length) % heroTabs.length;
+          activateHeroTab(nextIdx);
+          heroTabs[nextIdx].focus();
+        }
+      });
+    });
+
+    if (heroConsole) {
+      heroConsole.addEventListener('pointerenter', function () { heroHovered = true; });
+      heroConsole.addEventListener('pointerleave', function () { heroHovered = false; });
+      heroConsole.addEventListener('focusin', function () { heroHovered = true; });
+      heroConsole.addEventListener('focusout', function () { heroHovered = false; });
+    }
+
+    startHeroAutoCycle();
+  }
+
+  if (heroSection && heroConsole && !prefersReducedMotion) {
+    heroSection.addEventListener('pointermove', function (e) {
+      if (window.innerWidth < 1024) return;
+      const rect = heroSection.getBoundingClientRect();
+      const xRatio = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const yRatio = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      const rotY = (xRatio * 2.4).toFixed(2);
+      const rotX = (-yRatio * 1.8).toFixed(2);
+      heroConsole.style.transform = 'perspective(1100px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
+    });
+
+    heroSection.addEventListener('pointerleave', function () {
+      heroConsole.style.transform = '';
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 6. Universal Responsive Slider Engine (3 Desktop / 2 Tablet / 1 Mobile)
+   * ---------------------------------------------------------------------- */
+  const slidersByName = {};
+
+  function getSlidesPerView() {
+    const w = window.innerWidth;
+    if (w <= 767) return 1;
+    if (w <= 1023) return 2;
+    return 3;
+  }
+
+  function createSlider(shell) {
+    const name = shell.getAttribute('data-slider') || '';
+    const viewport = shell.querySelector('.slider-viewport');
+    const track = shell.querySelector('[data-slider-track]');
+    const prevBtn = shell.querySelector('[data-slider-prev]');
+    const nextBtn = shell.querySelector('[data-slider-next]');
+    const counterEl = shell.querySelector('[data-slider-counter]');
+    const dotsEl = shell.querySelector('[data-slider-dots]');
+    const autoplayMs = parseInt(shell.getAttribute('data-autoplay') || '0', 10);
+
+    if (!viewport || !track) return null;
+
+    const allSlides = Array.from(track.children).filter(function (el) {
+      return el.classList && el.classList.contains('slide-item');
+    });
+    let visibleSlides = [];
+    let currentIndex = 0;
+    let maxIndex = 0;
+    let renderedDotCount = -1;
+    let autoplayTimer = null;
+    let isPaused = false;
+
+    function collectVisibleSlides() {
+      visibleSlides = allSlides.filter(function (s) {
+        return !s.hidden;
+      });
+    }
+
+    function renderDots(totalStops) {
+      if (!dotsEl) return;
+      const footer = dotsEl.parentElement;
+      if (footer && footer.classList.contains('slider-footer')) {
+        footer.hidden = totalStops <= 1;
+      }
+
+      if (renderedDotCount !== totalStops) {
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < totalStops; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'slider-dot';
+          dot.setAttribute('aria-label', 'Go to slide view ' + (i + 1) + ' of ' + totalStops);
+          (function (targetIdx) {
+            dot.addEventListener('click', function () {
+              goTo(targetIdx);
+            });
+          })(i);
+          dotsEl.appendChild(dot);
+        }
+        renderedDotCount = totalStops;
+      }
+
+      const dots = dotsEl.querySelectorAll('.slider-dot');
+      dots.forEach(function (dot, idx) {
+        const active = idx === currentIndex;
+        dot.classList.toggle('is-active', active);
+        if (active) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function applyTransform() {
+      let offsetPx = 0;
+      const perView = getSlidesPerView();
+
+      if (currentIndex > 0 && visibleSlides[currentIndex] && visibleSlides[0]) {
+        const firstLeft = visibleSlides[0].offsetLeft;
+        const targetLeft = visibleSlides[currentIndex].offsetLeft;
+        if (targetLeft > firstLeft) {
+          offsetPx = targetLeft - firstLeft;
+        } else {
+          const styles = window.getComputedStyle(track);
+          const gap = parseFloat(styles.columnGap || styles.gap || '21.6') || 21.6;
+          const vw = viewport.clientWidth || 1140;
+          const step = (vw + gap) / perView;
+          offsetPx = Math.round(currentIndex * step);
+        }
+      }
+
+      track.style.transform = 'translate3d(' + (-offsetPx) + 'px, 0, 0)';
+    }
+
+    function updateControls() {
+      const totalStops = maxIndex + 1;
+      if (prevBtn) {
+        prevBtn.disabled = currentIndex <= 0;
+      }
+      if (nextBtn) {
+        nextBtn.disabled = currentIndex >= maxIndex;
+      }
+      if (counterEl) {
+        counterEl.textContent = pad2(currentIndex + 1) + ' / ' + pad2(totalStops);
+      }
+      renderDots(totalStops);
+    }
+
+    function goTo(index) {
+      collectVisibleSlides();
+      const perView = getSlidesPerView();
+      maxIndex = Math.max(0, visibleSlides.length - perView);
+      currentIndex = Math.max(0, Math.min(index, maxIndex));
+      applyTransform();
+      updateControls();
+    }
+
+    function refresh(resetIndex) {
+      collectVisibleSlides();
+      const perView = getSlidesPerView();
+      maxIndex = Math.max(0, visibleSlides.length - perView);
+      if (typeof resetIndex === 'number') {
+        currentIndex = Math.max(0, Math.min(resetIndex, maxIndex));
+      } else if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+      renderedDotCount = -1;
+      applyTransform();
+      updateControls();
+    }
+
+    function goToElement(slideEl) {
+      collectVisibleSlides();
+      const idx = visibleSlides.indexOf(slideEl);
+      if (idx !== -1) {
+        goTo(idx);
+        return true;
+      }
+      return false;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        goTo(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        goTo(currentIndex + 1);
+      });
+    }
+
+    // Keyboard navigation when focused inside slider
+    shell.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') {
+        goTo(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        goTo(currentIndex + 1);
+      }
+    });
+
+    // Touch swipe support (Mobile & Tablet)
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchActive = false;
+
+    viewport.addEventListener('touchstart', function (e) {
+      if (!e.touches || e.touches.length !== 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchActive = true;
+      isPaused = true;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', function (e) {
+      if (!touchActive || !e.changedTouches || !e.changedTouches.length) return;
+      touchActive = false;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        if (dx < 0) {
+          goTo(currentIndex + 1);
+        } else {
+          goTo(currentIndex - 1);
+        }
+      }
+      window.setTimeout(function () { isPaused = false; }, 1200);
+    }, { passive: true });
+
+    // Desktop mouse drag support (ignores interactive controls inside cards)
+    let mouseDown = false;
+    let mouseStartX = 0;
+
+    viewport.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      if (e.target.closest('a, button, input, select, textarea')) return;
+      mouseDown = true;
+      mouseStartX = e.clientX;
+      track.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mouseup', function (e) {
+      if (!mouseDown) return;
+      mouseDown = false;
+      track.classList.remove('is-dragging');
+      const dx = e.clientX - mouseStartX;
+      if (Math.abs(dx) > 50) {
+        if (dx < 0) {
+          goTo(currentIndex + 1);
+        } else {
+          goTo(currentIndex - 1);
+        }
+      }
+    });
+
+    // Autoplay support (e.g. Testimonials)
+    if (autoplayMs > 0 && !prefersReducedMotion) {
+      shell.addEventListener('pointerenter', function () { isPaused = true; });
+      shell.addEventListener('pointerleave', function () { isPaused = false; });
+      shell.addEventListener('focusin', function () { isPaused = true; });
+      shell.addEventListener('focusout', function () { isPaused = false; });
+
+      autoplayTimer = window.setInterval(function () {
+        if (isPaused || document.hidden || maxIndex <= 0) return;
+        const nextIdx = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        goTo(nextIdx);
+      }, autoplayMs);
+    }
+
+    refresh(0);
+
+    const api = {
+      name: name,
+      goTo: goTo,
+      refresh: refresh,
+      goToElement: goToElement,
+      getState: function () {
+        return {
+          currentIndex: currentIndex,
+          maxIndex: maxIndex,
+          perView: getSlidesPerView(),
+          visibleCount: visibleSlides.length
+        };
+      }
+    };
+
+    if (name) {
+      slidersByName[name] = api;
+    }
+    return api;
+  }
+
+  const sliderInstances = Array.from(document.querySelectorAll('[data-slider]'))
+    .map(createSlider)
+    .filter(Boolean);
+
+  let resizeTimer = null;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      sliderInstances.forEach(function (inst) {
+        inst.refresh();
+      });
+      updateScrollUI();
+    }, 90);
+  });
+
+  /* ------------------------------------------------------------------------
+   * 7. Deep-Link Slide Navigation (Footer Service Links & URL Hashes)
+   * ---------------------------------------------------------------------- */
+  function navigateToSlideById(slideId, smoothScroll) {
+    if (!slideId) return false;
+    const cleanId = slideId.replace(/^#/, '');
+    const targetEl = document.getElementById(cleanId);
+    if (!targetEl) return false;
+
+    if (targetEl.classList.contains('slide-item')) {
+      const parentShell = targetEl.closest('[data-slider]');
+      if (parentShell) {
+        const sliderName = parentShell.getAttribute('data-slider');
+        const sliderInst = slidersByName[sliderName];
+        if (sliderInst) {
+          sliderInst.goToElement(targetEl);
+        }
+      }
+    } else if (targetEl.classList.contains('srv-card')) {
+      document.querySelectorAll('.srv-card.is-highlighted').forEach(function (c) {
+        c.classList.remove('is-highlighted');
+      });
+      targetEl.classList.add('is-highlighted');
+      window.setTimeout(function () {
+        targetEl.classList.remove('is-highlighted');
+      }, 2200);
+    }
+
+    const parentSection = targetEl.closest('section') || targetEl;
+    parentSection.scrollIntoView({
+      behavior: smoothScroll && !prefersReducedMotion ? 'smooth' : 'auto'
+    });
+    return true;
+  }
+
+  document.addEventListener('click', function (e) {
+    const slideLink = e.target.closest('[data-goto-slide]');
+    if (!slideLink) return;
+    const targetId = slideLink.getAttribute('data-goto-slide');
+    if (navigateToSlideById(targetId, true)) {
+      e.preventDefault();
+      if (history.replaceState) {
+        history.replaceState(null, '', '#' + targetId);
+      }
+    }
+  });
+
+  function handleHashRouting() {
+    const rawHash = window.location.hash;
+    if (!rawHash) return;
+    const lowerHash = rawHash.toLowerCase();
+
+    if (legacyRedirects[lowerHash]) {
+      window.location.replace(legacyRedirects[lowerHash]);
+      return;
+    }
+
+    if (legacySectionAliases[lowerHash]) {
+      const aliased = document.querySelector(legacySectionAliases[lowerHash]);
+      if (aliased) {
+        if (history.replaceState) {
+          history.replaceState(null, '', legacySectionAliases[lowerHash]);
+        }
+        aliased.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      }
+      return;
+    }
+
+    if (lowerHash.indexOf('#service-') === 0) {
+      navigateToSlideById(lowerHash.slice(1), true);
+    }
+  }
+
+  handleHashRouting();
+  window.addEventListener('hashchange', handleHashRouting);
+
+  /* ------------------------------------------------------------------------
+   * 8. Technology Stack Category Filter
+   * ---------------------------------------------------------------------- */
+  const techTabs = document.querySelectorAll('[data-tech-filter]');
+  const techCards = document.querySelectorAll('[data-tech-cat]');
+
+  techTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const filter = tab.getAttribute('data-tech-filter');
+      techTabs.forEach(function (t) {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      techCards.forEach(function (card) {
+        const cat = card.getAttribute('data-tech-cat');
+        const show = filter === 'all' || cat === filter;
+        card.hidden = !show;
+      });
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+   * 9. Portfolio Category Filter (Integrated with Slider) & Case Modal
+   * ---------------------------------------------------------------------- */
+  const portfolioTabs = document.querySelectorAll('[data-portfolio-filter]');
+  const projectSlides = document.querySelectorAll('[data-project-cat]');
+
+  portfolioTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const filter = tab.getAttribute('data-portfolio-filter');
+      portfolioTabs.forEach(function (t) {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      projectSlides.forEach(function (slide) {
+        const cat = slide.getAttribute('data-project-cat');
+        slide.hidden = !(filter === 'all' || cat === filter);
+      });
+      if (slidersByName.portfolio) {
+        slidersByName.portfolio.refresh(0);
+      }
+    });
+  });
+
+  const projectData = {
+    ikart: {
+      industry: 'Logistics & Delivery Dispatch',
+      title: 'iKart Express — Custom Logistics & Dispatch ERP',
+      image: 'assets/images/portfolio/ikart-erp.webp',
+      service: 'Custom Software & ERP Solutions',
+      desc: 'Engineered a tailored logistics and delivery dispatch ERP platform for iKart Express to unify order intake, driver allocation, route tracking, and peak-volume warehouse coordination.',
+      highlights: [
+        'Centralized live dispatch console and automated shipment status updates',
+        'High-concurrency backend built to handle peak seasonal delivery volume',
+        'Role-based operational dashboards for dispatchers, hubs, and management'
+      ]
+    },
+    moj: {
+      industry: 'Luxury Retail & E-Commerce',
+      title: 'MŌJ Perfume — Bespoke Digital Storefront',
+      image: 'assets/images/portfolio/moj-ecommerce.webp',
+      service: 'E-Commerce Development',
+      desc: 'Designed and developed a refined e-commerce engine and brand storefront for MŌJ Perfume, pairing editorial fragrance presentation with a streamlined multi-device checkout.',
+      highlights: [
+        'Mobile-first luxury product storytelling and collection discovery',
+        'Fast, low-friction cart and secure payment gateway integration',
+        'Structured product schema and Core Web Vitals optimization'
+      ]
+    },
+    globaledge: {
+      industry: 'Enterprise Technology',
+      title: 'GlobalEdge — Scalable Backend & Web Platform',
+      image: 'assets/images/portfolio/globaledge-platform.webp',
+      service: 'Website Design & Development',
+      desc: 'Architected a clean, modular enterprise web and backend platform for GlobalEdge International, transforming internal data workflows and multi-team operational visibility.',
+      highlights: [
+        'Modular API-first backend architecture engineered for long-term maintainability',
+        'Responsive corporate interface with strict security and access controls',
+        'Optimized database queries and cloud deployment pipeline'
+      ]
+    },
+    spaceown: {
+      industry: 'SaaS & Client Portals',
+      title: 'Spaceown — Interactive Client Analytics Dashboard',
+      image: 'assets/images/portfolio/spaceown-dashboard.webp',
+      service: 'Custom Software & ERP Solutions',
+      desc: 'Designed and built Spaceown’s client-facing operational dashboard with a focus on visual clarity, intuitive UI architecture, and responsive frontend performance.',
+      highlights: [
+        'Component-driven UI/UX system with clear KPI visualization',
+        'Real-time task, account, and reporting workflows across desktop and mobile',
+        'Accessible typography and streamlined multi-step user journeys'
+      ]
+    },
+    kai: {
+      industry: 'Education & AI Training',
+      title: 'KAI (Kochin AI Academy) — Web & Digital Growth Platform',
+      image: 'assets/images/portfolio/kai-digital.webp',
+      service: 'Search Engine Optimization (SEO)',
+      desc: 'Delivered a modern, search-optimized educational web platform for KAI to showcase specialized AI programs, streamline student enquiries, and grow organic visibility.',
+      highlights: [
+        'High-converting course pages with clear curriculum and enrolment pathways',
+        'Technical SEO structure, clean heading hierarchy, and fast page loads',
+        'Integrated lead capture for admissions and counselling teams'
+      ]
+    },
+    indoroot: {
+      industry: 'Food Supply & Global Export',
+      title: 'Indoroot Spices — Inventory & Supply Chain ERP',
+      image: 'assets/images/portfolio/indoroot-supply.webp',
+      service: 'Custom Software & ERP Solutions',
+      desc: 'Built a custom ERP system for Indoroot Spices covering raw-material inventory automation, lot tracking, billing workflows, and international export supply visibility.',
+      highlights: [
+        'Automated stock thresholds, batch tracking, and warehouse ledger accuracy',
+        'Streamlined procurement-to-shipment documentation workflows',
+        'Cloud-accessible reporting for leadership and operations teams'
+      ]
+    }
+  };
+
+  const modalBackdrop = document.getElementById('project-modal');
+  const modalCloseBtn = document.getElementById('modal-close');
+  const modalImg = document.getElementById('modal-img');
+  const modalMeta = document.getElementById('modal-meta');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDesc = document.getElementById('modal-desc');
+  const modalList = document.getElementById('modal-highlights-list');
+  const modalCta = document.getElementById('modal-enquire-btn');
+  let lastFocusedTrigger = null;
+
+  function openProjectModal(key, triggerEl) {
+    const data = projectData[key];
+    if (!data || !modalBackdrop) return;
+    lastFocusedTrigger = triggerEl || document.activeElement;
+
+    modalImg.src = data.image;
+    modalImg.alt = data.title;
+    modalMeta.textContent = data.industry;
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+    modalList.innerHTML = '';
+    data.highlights.forEach(function (item) {
+      const li = document.createElement('li');
+      li.textContent = item;
+      modalList.appendChild(li);
+    });
+    if (modalCta) {
+      modalCta.setAttribute('data-select-service', data.service);
+    }
+
+    modalBackdrop.classList.add('is-open');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    if (modalCloseBtn) modalCloseBtn.focus();
+  }
+
+  function closeProjectModal() {
+    if (!modalBackdrop || !modalBackdrop.classList.contains('is-open')) return;
+    modalBackdrop.classList.remove('is-open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+      lastFocusedTrigger.focus();
+    }
+  }
+
+  document.querySelectorAll('[data-open-project]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openProjectModal(btn.getAttribute('data-open-project'), btn);
+    });
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeProjectModal);
+  }
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', function (e) {
+      if (e.target === modalBackdrop) closeProjectModal();
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeProjectModal();
+      if (mobileDrawer && mobileDrawer.classList.contains('is-open')) {
+        setDrawerOpen(false);
+      }
+    }
+  });
+
+  /* ------------------------------------------------------------------------
+   * 10. Service Pre-Selection CTA Links -> Smooth Scroll to Form
+   * ---------------------------------------------------------------------- */
+  const serviceSelect = document.getElementById('service');
+  const contactSection = document.getElementById('contact');
+
+  document.addEventListener('click', function (e) {
+    const trigger = e.target.closest('[data-select-service]');
+    if (!trigger) return;
+
+    const desiredService = trigger.getAttribute('data-select-service');
+    closeProjectModal();
+
+    if (serviceSelect && desiredService) {
+      Array.from(serviceSelect.options).forEach(function (opt) {
+        if (opt.value === desiredService) {
+          serviceSelect.value = desiredService;
+        }
+      });
+    }
+
+    if (contactSection) {
+      e.preventDefault();
+      contactSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      const nameInput = document.getElementById('full_name');
+      if (nameInput) {
+        window.setTimeout(function () { nameInput.focus({ preventScroll: true }); }, 450);
+      }
+    }
+  });
+
+  /* ------------------------------------------------------------------------
+   * 11. Accessible FAQ Accordion
+   * ---------------------------------------------------------------------- */
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+  faqTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      const item = trigger.closest('.faq-item');
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+      faqTriggers.forEach(function (other) {
+        const otherItem = other.closest('.faq-item');
+        other.setAttribute('aria-expanded', 'false');
+        if (otherItem) otherItem.classList.remove('is-open');
+      });
+
+      if (!isExpanded && item) {
+        trigger.setAttribute('aria-expanded', 'true');
+        item.classList.add('is-open');
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+   * 12. Contact Form Validation & Real Backend Submission (contact.php)
+   * ---------------------------------------------------------------------- */
+  const enquiryForm = document.getElementById('enquiry-form');
+  const formTsInput = document.getElementById('form_ts');
+  const formStatus = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (formTsInput) {
+    formTsInput.value = String(Date.now());
+  }
+
+  function setFieldError(fieldId, message) {
+    const input = document.getElementById(fieldId);
+    if (!input) return;
+    const group = input.closest('.form-group');
+    const errorEl = group ? group.querySelector('.field-error') : null;
+    if (message) {
+      input.classList.add('is-invalid');
+      input.setAttribute('aria-invalid', 'true');
+      if (group) group.classList.add('has-error');
+      if (errorEl) errorEl.textContent = message;
+    } else {
+      input.classList.remove('is-invalid');
+      input.removeAttribute('aria-invalid');
+      if (group) group.classList.remove('has-error');
+      if (errorEl) errorEl.textContent = '';
+    }
+  }
+
+  function validateFormFields() {
+    let valid = true;
+    const fullName = (document.getElementById('full_name').value || '').trim();
+    const email = (document.getElementById('email').value || '').trim();
+    const phone = (document.getElementById('phone').value || '').trim();
+    const service = (document.getElementById('service').value || '').trim();
+    const message = (document.getElementById('message').value || '').trim();
+
+    if (fullName.length < 2) {
+      setFieldError('full_name', 'Please enter your full name.');
+      valid = false;
+    } else {
+      setFieldError('full_name', '');
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(email)) {
+      setFieldError('email', 'Please enter a valid business email address.');
+      valid = false;
+    } else {
+      setFieldError('email', '');
+    }
+
+    const digits = phone.replace(/\D+/g, '');
+    const phoneAllowed = /^[+\d\s().\-]{7,24}$/.test(phone);
+    if (!phoneAllowed || digits.length < 7 || digits.length > 16) {
+      setFieldError('phone', 'Please enter a valid UAE or international phone number.');
+      valid = false;
+    } else {
+      setFieldError('phone', '');
+    }
+
+    if (!service) {
+      setFieldError('service', 'Please select the service you require.');
+      valid = false;
+    } else {
+      setFieldError('service', '');
+    }
+
+    if (message.length < 15) {
+      setFieldError('message', 'Please describe your project requirements (at least 15 characters).');
+      valid = false;
+    } else {
+      setFieldError('message', '');
+    }
+
+    return valid;
+  }
+
+  function showFormBanner(type, text) {
+    if (!formStatus) return;
+    formStatus.className = 'form-status is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
+    formStatus.textContent = text;
+  }
+
+  if (enquiryForm) {
+    ['full_name', 'email', 'phone', 'service', 'message'].forEach(function (id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        if (el.classList.contains('is-invalid')) {
+          setFieldError(id, '');
+        }
+      });
+      el.addEventListener('change', function () {
+        if (el.classList.contains('is-invalid')) {
+          setFieldError(id, '');
+        }
+      });
+    });
+
+    enquiryForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (formStatus) {
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+      }
+
+      if (!validateFormFields()) {
+        showFormBanner('error', 'Please complete all required fields accurately before submitting.');
+        return;
+      }
+
+      const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.classList.add('is-loading');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Enquiry...';
+      }
+
+      try {
+        const formData = new FormData(enquiryForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        const response = await fetch(enquiryForm.getAttribute('action') || 'contact.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error('non_php_host');
+        }
+
+        const result = await response.json();
+
+        if (response.ok && result && result.ok === true) {
+          showFormBanner('success', result.message || 'Thank you! Your project enquiry has been sent to our Dubai team.');
+          enquiryForm.reset();
+          if (formTsInput) formTsInput.value = String(Date.now());
+        } else {
+          if (result && result.errors) {
+            Object.keys(result.errors).forEach(function (fieldKey) {
+              setFieldError(fieldKey, result.errors[fieldKey]);
+            });
+          }
+          showFormBanner(
+            'error',
+            (result && result.message) || 'We could not process your submission right now. Please email info@tocoplus.com or call +971 4 577 0725.'
+          );
+        }
+      } catch (err) {
+        showFormBanner(
+          'error',
+          'Unable to reach the mail server from this environment. Please contact our Dubai team directly at info@tocoplus.com, call +971 4 577 0725, or message us on WhatsApp.'
+        );
+      } finally {
+        if (submitBtn) {
+          submitBtn.classList.remove('is-loading');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      }
+    });
+  }
+})();

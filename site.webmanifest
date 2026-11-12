@@ -1,0 +1,28 @@
+{
+  "name": "TOCO Technologies UAE",
+  "short_name": "TOCO Tech",
+  "description": "Web development, mobile applications, custom ERP software, e-commerce and digital solutions in Dubai and across the UAE.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1220",
+  "theme_color": "#0B1220",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/logo.webp",
+      "sizes": "160x160",
+      "type": "image/webp"
+    },
+    {
+      "src": "/assets/images/logo-square.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
+

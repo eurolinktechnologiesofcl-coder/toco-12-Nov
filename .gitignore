@@ -1,0 +1,9 @@
+# macOS & OS artifacts
+.DS_Store
+._*
+Thumbs.db
+
+# Server logs & local env
+*.log
+error_log
+.env
