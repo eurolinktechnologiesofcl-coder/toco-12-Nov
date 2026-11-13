@@ -11,6 +11,7 @@ import json
 # Ensure scratch directory is on path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_data import SERVICES_DATA, PRODUCTS_DATA
+from product_bento_data import render_bento_capabilities
 
 SITE_BASE = "https://tocotechnologies.ae"
 ROOT_DIR = "/Users/mac/Downloads/toco 12 nov"
@@ -698,6 +699,25 @@ def generate_service_page(svc):
 # -----------------------------------------------------------------------------
 # Generate Individual Product Page
 # -----------------------------------------------------------------------------
+def render_product_capabilities(prod, features_html):
+    slug = prod["slug"]
+    bento = render_bento_capabilities(slug)
+    if bento:
+        return bento
+    return f'''    <!-- Platform Features -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="eyebrow">Platform Capabilities</div>
+          <h2>Engineered for High-Velocity Business Execution</h2>
+          <p>Every feature is designed to reduce friction, eliminate operational error, and accelerate commercial workflow.</p>
+        </div>
+        <div class="grid-3">
+{features_html}        </div>
+      </div>
+    </section>'''
+
+
 def generate_product_page(prod):
     slug = prod["slug"]
     url = f"/products/{slug}"
@@ -807,6 +827,8 @@ def generate_product_page(prod):
           <p style="font-size:14px;color:var(--ink-2);line-height:1.5;">{rel["desc"]}</p>
         </a>\n'''
 
+    capabilities_html = render_product_capabilities(prod, features_html)
+
     html_content = f'''{render_head_tags(prod["title"], prod["meta_desc"], canonical, schema_graph)}
 {render_header("products")}
 
@@ -824,18 +846,7 @@ def generate_product_page(prod):
       </div>
     </section>
 
-    <!-- Platform Features -->
-    <section class="sec">
-      <div class="wrap">
-        <div class="sec-head">
-          <div class="eyebrow">Platform Capabilities</div>
-          <h2>Engineered for High-Velocity Business Execution</h2>
-          <p>Every feature is designed to reduce friction, eliminate operational error, and accelerate commercial workflow.</p>
-        </div>
-        <div class="grid-3">
-{features_html}        </div>
-      </div>
-    </section>
+{capabilities_html}
 
     <!-- Architecture & Process -->
     <section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">

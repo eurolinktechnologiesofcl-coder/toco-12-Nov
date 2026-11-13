@@ -829,54 +829,171 @@ def build_industries_page():
 
     industries_list = [
         {
-            "icon": "🚚",
-            "title": "Logistics, Supply Chain & Dispatch",
-            "desc": "Real-time fleet tracking, automated manifests, warehouse inventory sync, and multi-courier dispatch consoles tailored for UAE distribution.",
-            "points": ["iKart Express custom ERP case study", "Sub-minute courier route optimization", "Automated UAE proof of delivery (POD)"]
+            "num": "01",
+            "title": "Logistics &amp; Dispatch",
+            "desc": "Real-time fleet tracking, automated manifests, and multi-courier dispatch consoles for UAE distribution.",
+            "link": "/services/erp-and-custom-software",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="55" width="100" height="45" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="120" y="65" width="60" height="35" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="20" y1="75" x2="120" y2="75" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="45" cy="102" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="90" cy="102" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="150" cy="102" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="135" y="40" width="30" height="25" rx="1" fill="#4ADE80" fill-opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+            </svg>'''
         },
         {
-            "icon": "💎",
-            "title": "Luxury Perfumes, Fashion & Retail E-Commerce",
-            "desc": "High-converting digital storefronts with Apple Pay, Tabby/Tamara installment integrations, and multi-currency GCC checkout experiences.",
-            "points": ["MŌJ luxury fragrance platform", "Sub-second mobile checkout UX", "Automated 5% UAE VAT invoicing"]
+            "num": "02",
+            "title": "Luxury Retail &amp; E-Commerce",
+            "desc": "High-converting storefronts with Apple Pay, Tabby / Tamara, and multi-currency GCC checkout.",
+            "link": "/services/ecommerce-development",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="20" width="140" height="90" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="30" y="20" width="140" height="22" rx="3" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.06"/>
+              <rect x="50" y="52" width="40" height="40" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="100" y="52" width="55" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="100" y="78" width="55" height="8" rx="1" fill="#4ADE80" fill-opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="38" cy="31" r="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1"/>
+              <circle cx="52" cy="31" r="4" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1"/>
+            </svg>'''
         },
         {
-            "icon": "🏙️",
-            "title": "Real Estate Brokerages & Property Developers",
-            "desc": "Off-plan inventory management, automated Bayut and Property Finder WhatsApp lead intake, and interactive client presentation portals.",
-            "points": ["Real Estate CRM platform", "Automated broker lead assignment", "Interactive floor plans & payment plans"]
+            "num": "03",
+            "title": "Real Estate &amp; Property",
+            "desc": "Off-plan inventory management, WhatsApp lead intake, and interactive client presentation portals.",
+            "link": "/products/real-estate-crm",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="25" y="45" width="60" height="65" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="35" y="55" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="55" y="55" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="38" y="93" width="24" height="17" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="90" y="30" width="85" height="80" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="100" y="40" width="20" height="20" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="130" y="40" width="20" height="20" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="150" cy="22" r="6" fill="#4ADE80" fill-opacity="0.4" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="168" cy="22" r="6" fill="#4ADE80" fill-opacity="0.4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>'''
         },
         {
-            "icon": "🏥",
-            "title": "Healthcare, Medical Centers & Polyclinics",
-            "desc": "HIPAA-grade patient appointment portals, automated SMS and WhatsApp reminder sequences, and secure EMR database sync.",
-            "points": ["Patient appointment self-booking", "Reduced clinic no-show rates by 48%", "Full data privacy compliance"]
+            "num": "04",
+            "title": "Healthcare &amp; Medical",
+            "desc": "Patient appointment portals, WhatsApp reminder sequences, and secure EMR database sync.",
+            "link": "/services/website-and-software-development",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="30" width="140" height="80" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="30" y="30" width="140" height="22" rx="4" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.05"/>
+              <rect x="50" y="65" width="30" height="30" rx="2" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="65" y1="70" x2="65" y2="90" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="55" y1="80" x2="75" y2="80" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <rect x="95" y="62" width="60" height="8" rx="2" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.08"/>
+              <rect x="95" y="76" width="45" height="8" rx="2" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.05"/>
+              <rect x="95" y="90" width="52" height="8" rx="2" fill="#4ADE80" fill-opacity="0.3" stroke="currentColor" stroke-width="1.2"/>
+            </svg>'''
         },
         {
-            "icon": "🎓",
-            "title": "Higher Education, Academies & Corporate LMS",
-            "desc": "Bilingual distance learning portals, DRM protected video streaming, automated grading, and cryptographic completion certificates.",
-            "points": ["Custom e-learning & LMS platforms", "10,000+ concurrent exam sessions", "Integrated UAE payment gateways"]
+            "num": "05",
+            "title": "Education &amp; e-Learning",
+            "desc": "Bilingual LMS portals, DRM video streaming, automated grading, and digital completion certificates.",
+            "link": "/products/elearning-platform",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="25" width="160" height="75" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="20" y="25" width="45" height="75" rx="3" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.04"/>
+              <line x1="65" y1="25" x2="65" y2="100" stroke="currentColor" stroke-width="1"/>
+              <rect x="30" y="38" width="25" height="4" rx="1" fill="currentColor" fill-opacity="0.3"/>
+              <rect x="30" y="48" width="25" height="4" rx="1" fill="currentColor" fill-opacity="0.2"/>
+              <circle cx="112" cy="58" r="22" stroke="currentColor" stroke-width="1.5"/>
+              <polygon points="104,48 104,68 128,58" fill="#4ADE80" fill-opacity="0.5" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="75" y="88" width="90" height="8" rx="2" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.05"/>
+            </svg>'''
         },
         {
-            "icon": "💼",
-            "title": "Professional Services, Legal & Financial Advisory",
-            "desc": "Executive corporate portals, encrypted document exchange rooms, automated billing, and compliance workflow trackers.",
-            "points": ["Role-based access security", "Client onboarding automation", "Zero data retention API configurations"]
-        }
+            "num": "06",
+            "title": "Professional &amp; Financial",
+            "desc": "Corporate portals, encrypted document exchange, automated billing, and compliance workflow trackers.",
+            "link": "/services/erp-and-custom-software",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="25" y="20" width="150" height="90" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="25" y="20" width="150" height="18" rx="3" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="25" y1="38" x2="175" y2="38" stroke="currentColor" stroke-width="1"/>
+              <line x1="25" y1="60" x2="175" y2="60" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.4"/>
+              <line x1="25" y1="78" x2="175" y2="78" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.4"/>
+              <rect x="35" y="45" width="50" height="8" rx="1" fill="currentColor" fill-opacity="0.15"/>
+              <rect x="130" y="45" width="30" height="8" rx="1" fill="#4ADE80" fill-opacity="0.35" stroke="currentColor" stroke-width="1"/>
+              <rect x="130" y="63" width="30" height="8" rx="1" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="1"/>
+              <rect x="35" y="63" width="40" height="8" rx="1" fill="currentColor" fill-opacity="0.1"/>
+              <rect x="35" y="81" width="55" height="8" rx="1" fill="currentColor" fill-opacity="0.1"/>
+            </svg>'''
+        },
+        {
+            "num": "07",
+            "title": "AI &amp; Automation",
+            "desc": "Intelligent workflow agents, document OCR, WhatsApp bots, and AI-powered ERP integrations.",
+            "link": "/services/ai-automation",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="60" r="28" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="100" cy="60" r="12" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.08"/>
+              <circle cx="100" cy="32" r="6" stroke="currentColor" stroke-width="1.2" fill="#4ADE80" fill-opacity="0.4"/>
+              <circle cx="124" cy="46" r="6" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.1"/>
+              <circle cx="124" cy="74" r="6" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.1"/>
+              <circle cx="100" cy="88" r="6" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.1"/>
+              <circle cx="76" cy="74" r="6" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.1"/>
+              <circle cx="76" cy="46" r="6" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.1"/>
+              <line x1="100" y1="38" x2="100" y2="48" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="118" y1="49" x2="110" y2="54" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="82" y1="49" x2="90" y2="54" stroke="currentColor" stroke-width="1.2"/>
+            </svg>'''
+        },
+        {
+            "num": "08",
+            "title": "Mobile Apps &amp; SaaS",
+            "desc": "iOS and Android apps, SaaS platform dashboards, and scalable subscription product development.",
+            "link": "/services/mobile-app-development",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="55" y="10" width="55" height="100" rx="8" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="62" y="22" width="41" height="62" rx="2" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.04"/>
+              <rect x="72" y="12" width="21" height="4" rx="2" fill="currentColor" fill-opacity="0.3"/>
+              <circle cx="82" cy="102" r="5" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="68" y="30" width="30" height="12" rx="2" fill="#4ADE80" fill-opacity="0.3" stroke="currentColor" stroke-width="1"/>
+              <rect x="68" y="48" width="20" height="6" rx="1" fill="currentColor" fill-opacity="0.15"/>
+              <rect x="68" y="58" width="28" height="6" rx="1" fill="currentColor" fill-opacity="0.1"/>
+            </svg>'''
+        },
+        {
+            "num": "09",
+            "title": "Digital Marketing &amp; SEO",
+            "desc": "Performance campaigns, UAE search positioning, social media systems, and conversion-rate optimization.",
+            "link": "/services/digital-marketing",
+            "svg": '''<svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="80" width="22" height="30" rx="1" stroke="currentColor" stroke-width="1.5" fill="#4ADE80" fill-opacity="0.3"/>
+              <rect x="50" y="60" width="22" height="50" rx="1" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.08"/>
+              <rect x="80" y="45" width="22" height="65" rx="1" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.08"/>
+              <rect x="110" y="30" width="22" height="80" rx="1" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.08"/>
+              <rect x="140" y="15" width="22" height="95" rx="1" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.08"/>
+              <polyline points="31,80 61,60 91,45 121,30 151,15" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="151" cy="15" r="4" fill="#4ADE80"/>
+              <line x1="20" y1="110" x2="175" y2="110" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.4"/>
+            </svg>'''
+        },
     ]
 
+    # Build bordered grid HTML (endcap.design style: shared borders, no radius)
     cards_html = ""
     for ind in industries_list:
-        points_html = "".join([f'<li style="font-size:13.5px;color:var(--ink-2);margin-bottom:6px;">✓ {p}</li>' for p in ind["points"]])
-        cards_html += f'''        <div class="card rv" style="padding:28px;">
-          <div style="font-size:32px;margin-bottom:12px;">{ind["icon"]}</div>
-          <h3 style="font-size:20px;margin-bottom:8px;font-family:var(--font-display);color:var(--ink);">{ind["title"]}</h3>
-          <p style="font-size:14.5px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">{ind["desc"]}</p>
-          <ul style="list-style:none;padding:0;border-top:1px solid var(--line);padding-top:14px;">
-            {points_html}
-          </ul>
-        </div>\n'''
+        link_href = ind.get("link", "/contact")
+        cards_html += f'''        <a href="{link_href}" class="ind-cell rv">
+          <div class="ind-cell-visual">
+            {ind["svg"]}
+          </div>
+          <div class="ind-cell-body">
+            <span class="ind-num">{ind["num"]}</span>
+            <h3 class="ind-title">{ind["title"]}</h3>
+            <p class="ind-desc">{ind["desc"]}</p>
+          </div>
+          <span class="ind-arrow" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>\n'''
 
     content = f'''{render_head_tags(title, desc, canonical, schema)}
 {render_header("industries")}
@@ -884,24 +1001,19 @@ def build_industries_page():
     <section class="page-hero">
       <div class="wrap">
         {render_breadcrumbs(crumbs)}
-        <div style="max-width:820px;">
-          <div class="eyebrow">Sector Capabilities • Dubai &amp; Across UAE</div>
-          <h1>Tailored Technology Solutions for UAE Enterprise Sectors</h1>
+        <div style="max-width:720px;">
+          <div class="eyebrow">Sector Capabilities &bull; Dubai &amp; UAE</div>
+          <h1>Industries We Build For</h1>
           <p class="lede">
-            Every industry operates under distinct regulatory mandates, operational constraints, and customer expectations. We engineer domain-specific software platforms across core UAE commercial verticals.
+            Specialized software, AI automation, and digital systems across nine UAE commercial verticals.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="sec">
+    <section class="sec" style="padding-top:30px;padding-bottom:70px;">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="eyebrow">Industry Verticals</div>
-          <h2>Proven Domain Expertise in the Arabian Gulf</h2>
-          <p>Explore how we solve specialized operational and commercial challenges for regional leaders.</p>
-        </div>
-        <div class="grid-3">
+        <div class="ind-grid">
 {cards_html}        </div>
       </div>
     </section>
@@ -911,7 +1023,6 @@ def build_industries_page():
 {render_footer()}
 </body>
 </html>'''
-
     out_dir = os.path.join(ROOT_DIR, "industries")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8") as f:
@@ -1489,105 +1600,66 @@ def build_homepage():
 {render_header("home")}
 
   <main id="main-content">
-    <!-- SECTION 1: HERO (Highest Design Priority) -->
+    <!-- SECTION 1: HERO (Modern Clean Centered Stage) -->
     <section class="hero" id="home">
-      <div class="wrap">
-        <div class="hero-grid">
-          <!-- Hero Copy -->
-          <div>
-            <div class="eyebrow" style="margin-bottom:18px;">
-              <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cyan);margin-right:6px;box-shadow:0 0 8px var(--cyan);"></span>
-              DUBAI &amp; UAE ENTERPRISE TECHNOLOGY PARTNER
-            </div>
-            <h1>Engineering <span class="grad-text">AI Business Automation</span> &amp; High-Impact Software in Dubai</h1>
-            <p class="lede">
-              We build powerful websites, intelligent AI applications, custom ERPs, and conversion-engineered digital experiences that help UAE businesses connect, automate, and grow.
-            </p>
-            <div class="hero-cta">
-              <a href="/contact" class="btn btn-primary">
-                <span>Book Strategic Consultation</span>
-                <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-              <a href="/services" class="btn btn-ghost">
-                <span>Explore Solutions</span>
-              </a>
-            </div>
-            <div style="display:flex;align-items:center;gap:20px;margin-top:28px;font-size:13px;color:var(--ink-3);flex-wrap:wrap;">
-              <span style="display:inline-flex;align-items:center;gap:6px;">✓ Port Saeed, Dubai Office</span>
-              <span style="display:inline-flex;align-items:center;gap:6px;">✓ 30-Day Launch Warranty</span>
-              <span style="display:inline-flex;align-items:center;gap:6px;">✓ 100% Code Ownership</span>
-            </div>
+      <!-- Ambient Concentric Rings (Deflexai inspired, elegant, no icons) -->
+      <div class="hero-bg-rings" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-rings-svg">
+          <circle cx="600" cy="380" r="160" stroke="rgba(59, 130, 246, 0.22)" stroke-width="1" stroke-dasharray="4 6"/>
+          <circle cx="600" cy="380" r="300" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+          <circle cx="600" cy="380" r="460" stroke="rgba(59, 130, 246, 0.14)" stroke-width="1" stroke-dasharray="6 8"/>
+          <circle cx="600" cy="380" r="620" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+        </svg>
+        <div class="hero-ambient-glow"></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="wrap hero-content-wrap">
+        <div class="hero-badge-pill">
+          <span class="badge-dot"></span>
+          <span>Dubai &amp; UAE Enterprise Technology Partner</span>
+        </div>
+
+        <h1>Engineering <span class="grad-text">AI Systems</span> &amp; High-Impact Software in Dubai</h1>
+
+        <p class="lede">
+          We engineer intelligent AI automation, custom ERP systems, and high-performance digital platforms that help UAE enterprises scale, automate workflows, and drive measurable revenue.
+        </p>
+
+        <div class="hero-cta">
+          <a href="/contact" class="btn btn-primary">
+            <span>Book Strategic Consultation</span>
+            <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="/services" class="btn btn-ghost">
+            <span>Explore Solutions</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Port Saeed, Dubai HQ</span>
           </div>
-
-          <!-- Hero Pure CSS / HTML Visual Mockup -->
-          <div class="hero-visual">
-            <div class="mock-card">
-              <div class="mock-header">
-                <div class="mock-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="mock-title">tocotechnologies.ae / system-telemetry</div>
-                <div style="font-size:11px;color:var(--cyan);font-weight:600;">ACTIVE</div>
-              </div>
-
-              <!-- Metrics Summary Row -->
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;">
-                <div style="background:rgba(255,255,255,0.025);border:1px solid var(--line);border-radius:10px;padding:12px;">
-                  <div style="font-size:11px;color:var(--ink-3);text-transform:uppercase;margin-bottom:4px;">Core Web Vitals</div>
-                  <div style="font-size:20px;font-weight:700;color:var(--ink);font-family:var(--font-display);">98 / 100</div>
-                  <div style="font-size:11px;color:var(--emerald);">Fast Mobile UX</div>
-                </div>
-                <div style="background:rgba(255,255,255,0.025);border:1px solid var(--line);border-radius:10px;padding:12px;">
-                  <div style="font-size:11px;color:var(--ink-3);text-transform:uppercase;margin-bottom:4px;">AI Automation</div>
-                  <div style="font-size:20px;font-weight:700;color:var(--ink);font-family:var(--font-display);">24/7 Live</div>
-                  <div style="font-size:11px;color:var(--cyan);">&lt; 45s Response</div>
-                </div>
-                <div style="background:rgba(255,255,255,0.025);border:1px solid var(--line);border-radius:10px;padding:12px;">
-                  <div style="font-size:11px;color:var(--ink-3);text-transform:uppercase;margin-bottom:4px;">Platform Uptime</div>
-                  <div style="font-size:20px;font-weight:700;color:var(--ink);font-family:var(--font-display);">99.8%</div>
-                  <div style="font-size:11px;color:var(--blue-bright);">Cloud SLA</div>
-                </div>
-              </div>
-
-              <!-- Real-Time Telemetry Graph -->
-              <div style="background:rgba(10,16,28,0.7);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                  <span style="font-size:13px;font-weight:600;color:var(--ink);">Inquiry &amp; Conversion Telemetry</span>
-                  <span style="font-size:11px;padding:2px 8px;border-radius:999px;background:rgba(6,182,212,0.15);color:var(--cyan);border:1px solid rgba(6,182,212,0.3);">Real-Time Sync</span>
-                </div>
-                <!-- Pure SVG Sparkline -->
-                <svg viewBox="0 0 360 80" style="width:100%;height:80px;overflow:visible;">
-                  <defs>
-                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.35"/>
-                      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.0"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M0,65 Q45,55 90,48 T180,32 T270,22 T360,10 L360,80 L0,80 Z" fill="url(#chartGrad)"/>
-                  <path d="M0,65 Q45,55 90,48 T180,32 T270,22 T360,10" fill="none" stroke="#3B82F6" stroke-width="2.5"/>
-                  <circle cx="180" cy="32" r="4.5" fill="#06B6D4" stroke="#0E1626" stroke-width="2"/>
-                  <circle cx="360" cy="10" r="5" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2"/>
-                </svg>
-              </div>
-
-              <!-- Location & Status Pills -->
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-2);padding-top:4px;">
-                <span style="display:flex;align-items:center;gap:6px;">
-                  <span style="width:6px;height:6px;border-radius:50%;background:var(--emerald);"></span>
-                  Port Saeed, Dubai HQ
-                </span>
-                <span>Full-Stack Engineering &amp; AI</span>
-              </div>
-            </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>30-Day Launch Warranty</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>100% Code Ownership</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: INFINITE LOGO MARQUEE -->
-    <section class="sec" style="padding:20px 0;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-      <div class="wrap" style="text-align:center;margin-bottom:12px;">
-        <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3);">
+    <!-- SECTION 2: INFINITE LOGO MARQUEE (Crisp Clean White Background, No Boxes) -->
+    <section class="sec" style="padding:28px 0;background:#FFFFFF;border-top:1px solid rgba(10,10,10,0.08);border-bottom:1px solid rgba(10,10,10,0.08);">
+      <div class="wrap" style="text-align:center;margin-bottom:16px;">
+        <span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#64748B;">
           Trusted by Innovative UAE Enterprises &amp; Regional Brands
         </span>
       </div>
@@ -1619,116 +1691,143 @@ def build_homepage():
       </div>
     </section>
 
-    <!-- SECTION 3: WHAT WE BUILD (Card Grid with ↗ links and tags) -->
+    <!-- SECTION 3: WHAT WE BUILD (2-Column Editorial Row Architecture) -->
     <section class="sec" id="what-we-build">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="eyebrow">Enterprise Capabilities</div>
+        <div class="sec-head" style="margin-bottom:36px;">
+          <div class="eyebrow">
+            <span class="badge-dot"></span>
+            Enterprise Capabilities
+          </div>
           <h2>What We Build for UAE Businesses</h2>
-          <p>Production-grade technology platforms engineered for commercial growth, high concurrency, and long-term maintainability.</p>
+          <p style="max-width:680px;">
+            Production-grade technology platforms engineered for commercial scale, operational autonomy, and long-term maintainability.
+          </p>
         </div>
-        <div class="grid-3">
-          <!-- Card 1 -->
-          <a href="/services/ai-automation" class="card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-              <span style="font-size:28px;">🤖</span>
-              <span style="color:var(--cyan);font-size:20px;font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">AI Automation &amp; Autonomous Agents</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">
-              Intelligent multi-agent systems and LLM pipelines that execute complex operational workflows without manual data entry.
-            </p>
-            <div class="tags">
-              <span>LLM Pipelines</span>
-              <span>Doc Intelligence</span>
-              <span>FastAPI</span>
-            </div>
-          </a>
 
-          <!-- Card 2 -->
-          <a href="/services/ai-business-automation" class="card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-              <span style="font-size:28px;">⚡</span>
-              <span style="color:var(--cyan);font-size:20px;font-weight:700;">↗</span>
+        <!-- 2-Column Row Layout (No Heavy Boxes) -->
+        <div class="cap-two-col rv">
+          
+          <!-- Column 1: AI & Autonomous Systems -->
+          <div class="cap-col">
+            <div class="cap-col-header">
+              <span class="cap-col-num">01 / CAPABILITY DIVISION</span>
+              <h3 class="cap-col-title">AI &amp; Autonomous Systems</h3>
+              <p class="cap-col-desc">Multi-agent pipelines, automated conversions, and deterministic reasoning engines.</p>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">AI Business Conversions</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">
-              Instant sub-minute lead capture across WhatsApp and website chat, autonomous qualification, and immediate CRM synchronization.
-            </p>
-            <div class="tags">
-              <span>WhatsApp Cloud</span>
-              <span>Instant Lead Qual</span>
-              <span>Calendar Sync</span>
-            </div>
-          </a>
 
-          <!-- Card 3 -->
-          <a href="/services/mobile-app-development" class="card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-              <span style="font-size:28px;">📱</span>
-              <span style="color:var(--cyan);font-size:20px;font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Mobile Application Software</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">
-              Native and Flutter iOS &amp; Android applications built for silky 60fps performance, Apple Pay checkouts, and live GPS dispatch.
-            </p>
-            <div class="tags">
-              <span>Flutter</span>
-              <span>Apple Pay</span>
-              <span>GPS Telemetry</span>
-            </div>
-          </a>
+            <!-- Item 1.1 -->
+            <a href="/services/ai-automation" class="cap-row-item">
+              <div class="cap-row-head">
+                <span class="cap-row-title">Autonomous Multi-Agent Pipelines</span>
+                <span class="cap-row-arr">↗</span>
+              </div>
+              <p class="cap-row-desc">
+                Deterministic LLM pipelines and multi-agent workflows that automate document extraction, complex decision trees, and multi-system data routing without manual entry.
+              </p>
+              <div class="cap-row-tags">
+                <span class="cap-tag">Multi-Agent LangGraph</span>
+                <span class="cap-tag">Doc Intelligence</span>
+                <span class="cap-tag">FastAPI</span>
+                <span class="cap-metric">&lt; 420ms Latency</span>
+              </div>
+            </a>
 
-          <!-- Card 4 -->
-          <a href="/services/website-and-software-development" class="card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-              <span style="font-size:28px;">💻</span>
-              <span style="color:var(--cyan);font-size:20px;font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Website &amp; Custom Software</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">
-              Sub-second corporate web platforms, client portals, and cloud microservices engineered for Core Web Vitals dominance.
-            </p>
-            <div class="tags">
-              <span>Sub-Second Speeds</span>
-              <span>Semantic HTML5</span>
-              <span>REST APIs</span>
-            </div>
-          </a>
+            <!-- Item 1.2 -->
+            <a href="/services/ai-business-automation" class="cap-row-item">
+              <div class="cap-row-head">
+                <span class="cap-row-title">AI Business Conversions &amp; WhatsApp</span>
+                <span class="cap-row-arr">↗</span>
+              </div>
+              <p class="cap-row-desc">
+                Sub-minute lead capture across WhatsApp Cloud and website chat with autonomous qualification, real-time CRM syncing, and meeting scheduling.
+              </p>
+              <div class="cap-row-tags">
+                <span class="cap-tag">WhatsApp Cloud API</span>
+                <span class="cap-tag">Instant Lead Qual</span>
+                <span class="cap-tag">Calendar Sync</span>
+                <span class="cap-metric">+42% Lead Lift</span>
+              </div>
+            </a>
 
-          <!-- Card 5 -->
-          <a href="/services/ecommerce-development" class="card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-              <span style="font-size:28px;">🛍️</span>
-              <span style="color:var(--cyan);font-size:20px;font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">E-Commerce Development</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">
-              High-converting digital storefronts on Shopify Plus or custom headless stacks with Tabby/Tamara installments and UAE VAT invoicing.
-            </p>
-            <div class="tags">
-              <span>Shopify Plus</span>
-              <span>Tabby / Tamara</span>
-              <span>Live POS Sync</span>
-            </div>
-          </a>
+            <!-- Item 1.3 -->
+            <a href="/services/ai-automation" class="cap-row-item">
+              <div class="cap-row-head">
+                <span class="cap-row-title">Enterprise AI &amp; Data Intelligence</span>
+                <span class="cap-row-arr">↗</span>
+              </div>
+              <p class="cap-row-desc">
+                Internal knowledge retrieval (RAG), private LLM fine-tuning, and deterministic data extraction engineered for strict UAE Data Residency compliance.
+              </p>
+              <div class="cap-row-tags">
+                <span class="cap-tag">Private RAG</span>
+                <span class="cap-tag">UAE Decree-Law 45</span>
+                <span class="cap-tag">OCR Telemetry</span>
+                <span class="cap-metric">100% On-Premise / UAE Cloud</span>
+              </div>
+            </a>
+          </div>
 
-          <!-- Card 6 -->
-          <a href="/services/erp-and-custom-software" class="card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-              <span style="font-size:28px;">🏢</span>
-              <span style="color:var(--cyan);font-size:20px;font-weight:700;">↗</span>
+          <!-- Column 2: Enterprise Software & Platforms -->
+          <div class="cap-col">
+            <div class="cap-col-header">
+              <span class="cap-col-num">02 / CAPABILITY DIVISION</span>
+              <h3 class="cap-col-title">Enterprise Software &amp; Platforms</h3>
+              <p class="cap-col-desc">Custom ERPs, 60fps mobile applications, and sub-second digital systems.</p>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Custom ERP &amp; Business Systems</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;">
-              Bespoke enterprise resource planning suites, logistics dispatch consoles, and warehouse inventory systems tailored to your exact rules.
-            </p>
-            <div class="tags">
-              <span>Logistics Dispatch</span>
-              <span>RBAC Security</span>
-              <span>Zero License Fees</span>
-            </div>
-          </a>
+
+            <!-- Item 2.1 -->
+            <a href="/services/erp-and-custom-software" class="cap-row-item">
+              <div class="cap-row-head">
+                <span class="cap-row-title">Custom ERP &amp; Operating Systems</span>
+                <span class="cap-row-arr">↗</span>
+              </div>
+              <p class="cap-row-desc">
+                Bespoke enterprise suites, logistics dispatch consoles, warehouse inventory, and automated MOHRE WPS payroll compliance with zero recurring SaaS tax.
+              </p>
+              <div class="cap-row-tags">
+                <span class="cap-tag">Logistics Dispatch</span>
+                <span class="cap-tag">MOHRE WPS Invoicing</span>
+                <span class="cap-tag">RBAC Security</span>
+                <span class="cap-metric">100% Code Ownership</span>
+              </div>
+            </a>
+
+            <!-- Item 2.2 -->
+            <a href="/services/mobile-app-development" class="cap-row-item">
+              <div class="cap-row-head">
+                <span class="cap-row-title">Mobile Application Software</span>
+                <span class="cap-row-arr">↗</span>
+              </div>
+              <p class="cap-row-desc">
+                Native and Flutter iOS &amp; Android applications built for silky 60fps performance, Apple Pay checkouts, biometric login, and live GPS telemetry.
+              </p>
+              <div class="cap-row-tags">
+                <span class="cap-tag">Flutter &amp; Swift</span>
+                <span class="cap-tag">Apple Pay 1-Tap</span>
+                <span class="cap-tag">GPS Telemetry</span>
+                <span class="cap-metric">60 FPS Native</span>
+              </div>
+            </a>
+
+            <!-- Item 2.3 -->
+            <a href="/services/website-and-software-development" class="cap-row-item">
+              <div class="cap-row-head">
+                <span class="cap-row-title">Sub-Second Web &amp; E-Commerce</span>
+                <span class="cap-row-arr">↗</span>
+              </div>
+              <p class="cap-row-desc">
+                Sub-second corporate web platforms and high-converting storefronts on Shopify Plus or custom headless stacks with Tabby/Tamara 4-split installments.
+              </p>
+              <div class="cap-row-tags">
+                <span class="cap-tag">Static Edge Architecture</span>
+                <span class="cap-tag">Tabby / Tamara</span>
+                <span class="cap-tag">Arabic RTL</span>
+                <span class="cap-metric">99/100 Core Web Vitals</span>
+              </div>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1896,119 +1995,99 @@ def build_homepage():
       </div>
     </section>
 
-    <!-- SECTION 5: OUR PRODUCTS SHOWCASE -->
+    <!-- SECTION 5: PRODUCTS — FEATURED EDITORIAL ROW -->
     <section class="sec" id="products">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="eyebrow">Proprietary Software</div>
-          <h2>Our Products Showcase</h2>
-          <p>Purpose-built software platforms engineered by TOCO Technologies for regional UAE commercial verticals.</p>
-        </div>
-        <div class="grid-3">
-          <!-- E-Learning Platform -->
-          <a href="/products/elearning-platform" class="card prod-card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-              <span class="tag-badge live">Live Platform</span>
-              <span style="color:var(--cyan);font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">E-Learning &amp; LMS Platform</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              An enterprise distance-learning LMS with adaptive video streaming, automated grading, and learner verification.
-            </p>
-            <div class="tags">
-              <span>10K+ Concurrent</span>
-              <span>Bilingual RTL</span>
-              <span>Apple Pay</span>
-            </div>
-          </a>
+        <div class="pf-layout">
+          <!-- Left: Section label + featured large product -->
+          <div class="pf-left">
+            <div class="eyebrow" style="margin-bottom:12px;">Proprietary Platforms</div>
+            <h2 style="margin-bottom:10px;">Built In-House.<br>Deployed Across UAE.</h2>
+            <p style="font-size:15px;color:var(--ink-2);max-width:360px;line-height:1.65;margin-bottom:32px;">Purpose-built SaaS platforms engineered by TOCO Technologies for GCC commercial verticals — owned, maintained, and licensed directly.</p>
+            <!-- Featured card -->
+            <a href="/products/elearning-platform" class="pf-featured rv">
+              <div class="pf-feat-eyebrow">
+                <span class="prod-status-pill is-live"><span class="pulse-dot"></span> Live v2.4</span>
+                <span class="pf-feat-category">Education &amp; Academies</span>
+              </div>
+              <h3 class="pf-feat-title">E-Learning &amp; LMS Platform</h3>
+              <p class="pf-feat-desc">Enterprise distance-learning LMS with adaptive video streaming, automated grading, and learner verification for GCC institutions.</p>
+              <div class="pf-feat-metric">
+                <span class="pf-feat-num">10,000+</span>
+                <span class="pf-feat-label">Concurrent Active Learners</span>
+              </div>
+              <div class="pf-feat-tech">
+                <span>Next.js 14</span><span>PostgreSQL</span><span>HLS Video</span>
+              </div>
+              <div class="pf-feat-arrow">
+                <span>Explore Platform</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </a>
+          </div>
 
-          <!-- Interior Quote Automation -->
-          <a href="/products/interior-quote-automation" class="card prod-card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-              <span class="tag-badge live">Live Platform</span>
-              <span style="color:var(--cyan);font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Interior Quote &amp; Sales Automation</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              Interior design quote generation and sales automation platform delivering instant luxury BOQ proposals for fit-out studios in Dubai.
-            </p>
-            <div class="tags">
-              <span>85% Faster Quotes</span>
-              <span>E-Signatures</span>
-              <span>UAE VAT Invoices</span>
-            </div>
-          </a>
+          <!-- Right: 4 compact product rows -->
+          <div class="pf-right">
+            <a href="/products/interior-quote-automation" class="pf-row rv">
+              <div class="pf-row-top">
+                <div>
+                  <span class="pf-row-cat">Architecture &amp; Fit-Out</span>
+                  <h4 class="pf-row-title">Interior Quote &amp; Sales Automation</h4>
+                </div>
+                <span class="prod-status-pill is-live"><span class="pulse-dot"></span> Live</span>
+              </div>
+              <p class="pf-row-desc">Instant luxury BOQ proposals with automated e-signatures and UAE VAT invoicing for fit-out studios in Dubai.</p>
+              <div class="pf-row-stat">&lt; 3 mins — BOQ Generation</div>
+            </a>
 
-          <!-- AI-Powered ERP -->
-          <a href="/products/ai-erp-platform" class="card prod-card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-              <span class="tag-badge live">Live Platform</span>
-              <span style="color:var(--cyan);font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">AI-Powered ERP</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              AI-assisted enterprise operations platform that bridges customer inquiries directly to procurement, dispatch, and automated invoicing.
-            </p>
-            <div class="tags">
-              <span>Predictive Stock</span>
-              <span>Auto Dispatch</span>
-              <span>Role RBAC</span>
-            </div>
-          </a>
+            <a href="/products/ai-erp-platform" class="pf-row rv">
+              <div class="pf-row-top">
+                <div>
+                  <span class="pf-row-cat">Operations &amp; Commerce</span>
+                  <h4 class="pf-row-title">AI-Powered ERP</h4>
+                </div>
+                <span class="prod-status-pill is-live"><span class="pulse-dot"></span> Live</span>
+              </div>
+              <p class="pf-row-desc">Customer inquiry to dispatch automation — predictive inventory, RBAC, and courier API sync across all branches.</p>
+              <div class="pf-row-stat">99.8% — Dispatch Accuracy</div>
+            </a>
 
-          <!-- Payroll Automation -->
-          <a href="/products/payroll-automation" class="card prod-card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-              <span class="tag-badge live">Live Platform</span>
-              <span style="color:var(--cyan);font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Payroll Automation &amp; WPS</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              Automated payroll and WPS compliance software for UAE businesses. One-click .SIF file generation and automated gratuity calculation.
-            </p>
-            <div class="tags">
-              <span>100% SIF Valid</span>
-              <span>MOHRE Labor Law</span>
-              <span>Encrypted</span>
-            </div>
-          </a>
+            <a href="/products/payroll-automation" class="pf-row rv">
+              <div class="pf-row-top">
+                <div>
+                  <span class="pf-row-cat">HR &amp; Compliance</span>
+                  <h4 class="pf-row-title">Payroll Automation &amp; WPS</h4>
+                </div>
+                <span class="prod-status-pill is-live"><span class="pulse-dot"></span> Live</span>
+              </div>
+              <p class="pf-row-desc">One-click .SIF export, automated gratuity calculation, and UAE Labor Law end-of-service compliance.</p>
+              <div class="pf-row-stat">100% — MOHRE &amp; SIF Compliant</div>
+            </a>
 
-          <!-- Analytics Suite -->
-          <a href="/products/analytics-tracking" class="card prod-card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-              <span class="tag-badge dev">In Development</span>
-              <span style="color:var(--cyan);font-weight:700;">↗</span>
-            </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Analytics Tracking Suite</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              Privacy-first customer journey attribution and real-time business telemetry designed for GCC commerce.
-            </p>
-            <div class="tags">
-              <span>Cookie-Less</span>
-              <span>&lt; 5KB Tag</span>
-            </div>
-          </a>
+            <a href="/products/real-estate-crm" class="pf-row rv">
+              <div class="pf-row-top">
+                <div>
+                  <span class="pf-row-cat">PropTech &amp; Brokerage</span>
+                  <h4 class="pf-row-title">Real Estate CRM Suite</h4>
+                </div>
+                <span class="prod-status-pill is-dev"><span class="dev-dot"></span> Beta</span>
+              </div>
+              <p class="pf-row-desc">WhatsApp lead parsing, broker round-robin, Bayut &amp; Property Finder portal sync, and DLD escrow tracking.</p>
+              <div class="pf-row-stat">Instant — Portal Webhooks</div>
+            </a>
 
-          <!-- Real Estate CRM -->
-          <a href="/products/real-estate-crm" class="card prod-card rv" style="text-decoration:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-              <span class="tag-badge dev">In Development</span>
-              <span style="color:var(--cyan);font-weight:700;">↗</span>
+            <div style="padding-top:20px;border-top:1px solid var(--line);">
+              <a href="/products" class="btn btn-ghost" style="font-size:13px;padding:9px 20px;">
+                <span>All 6 Products</span>
+                <svg class="arr" width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
             </div>
-            <h3 style="font-size:20px;margin-bottom:8px;color:var(--ink);">Real Estate CRM Suite</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">
-              Purpose-built CRM for Dubai property brokerages with automated portal lead capture, WhatsApp parsing, and unit inventory sync.
-            </p>
-            <div class="tags">
-              <span>Bayut &amp; PF Sync</span>
-              <span>Broker WhatsApp</span>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 6: WHERE TO BEGIN (AI-Readiness Graphic / 4-Tier Visual Process) -->
+    <!-- SECTION 6: WHERE TO BEGIN    <!-- SECTION 6: WHERE TO BEGIN (AI-Readiness Graphic / 4-Tier Visual Process) -->
     <section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
       <div class="wrap">
         <div class="sec-head">
@@ -2077,104 +2156,172 @@ def build_homepage():
       </div>
     </section>
 
-    <!-- SECTION 8: INDUSTRIES CHIPS -->
-    <section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <!-- SECTION 8: INDUSTRIES — NUMBERED ROW LAYOUT -->
+    <section class="sec" id="industries">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="eyebrow">Specialized Verticals</div>
-          <h2>Industries We Accelerate in the UAE</h2>
-          <p>Domain-specific architectures engineered around local business models and regulatory requirements.</p>
-        </div>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:960px;margin:0 auto 30px;">
-          <a href="/industries" class="t-chip" style="font-size:14.5px;padding:10px 18px;text-decoration:none;">🚚 Logistics &amp; Distribution</a>
-          <a href="/industries" class="t-chip" style="font-size:14.5px;padding:10px 18px;text-decoration:none;">💎 Luxury Retail &amp; Perfumes</a>
-          <a href="/industries" class="t-chip" style="font-size:14.5px;padding:10px 18px;text-decoration:none;">🏙️ Real Estate &amp; Off-Plan</a>
-          <a href="/industries" class="t-chip" style="font-size:14.5px;padding:10px 18px;text-decoration:none;">🏥 Healthcare &amp; Polyclinics</a>
-          <a href="/industries" class="t-chip" style="font-size:14.5px;padding:10px 18px;text-decoration:none;">🎓 Higher Education &amp; LMS</a>
-          <a href="/industries" class="t-chip" style="font-size:14.5px;padding:10px 18px;text-decoration:none;">💼 Professional &amp; Legal Advisory</a>
-        </div>
-        <div style="text-align:center;">
-          <a href="/industries" class="btn btn-ghost">
-            <span>Explore Industry Case Studies</span>
-            <svg class="arr" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+        <div class="ind-row-layout">
+          <div class="ind-row-left">
+            <div class="eyebrow">UAE Market Verticals</div>
+            <h2>Industry Expertise,<br>Built Into Every Line of Code.</h2>
+            <p>We build technology shaped around UAE regulatory frameworks, local payment infrastructure, and GCC business logic — not generic offshore templates.</p>
+            <a href="/industries" class="btn btn-primary" style="font-size:14px;padding:11px 24px;">
+              <span>Explore All Industries</span>
+              <svg class="arr" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="ind-row-right">
+            <a href="/industries" class="ind-nr rv">
+              <span class="ind-nr-num">01</span>
+              <div class="ind-nr-body">
+                <span class="ind-nr-title">Logistics &amp; Distribution</span>
+                <span class="ind-nr-sub">Fleet Dispatch · Dubai Trade &amp; Customs · Live GPS</span>
+              </div>
+              <svg class="ind-nr-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/industries" class="ind-nr rv">
+              <span class="ind-nr-num">02</span>
+              <div class="ind-nr-body">
+                <span class="ind-nr-title">Luxury Retail &amp; Perfumes</span>
+                <span class="ind-nr-sub">Tabby · Tamara · Arabic RTL · Sub-700ms Loads</span>
+              </div>
+              <svg class="ind-nr-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/industries" class="ind-nr rv">
+              <span class="ind-nr-num">03</span>
+              <div class="ind-nr-body">
+                <span class="ind-nr-title">Real Estate &amp; Off-Plan</span>
+                <span class="ind-nr-sub">RERA Compliant · DLD Escrow · Portal Integrations</span>
+              </div>
+              <svg class="ind-nr-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/industries" class="ind-nr rv">
+              <span class="ind-nr-num">04</span>
+              <div class="ind-nr-body">
+                <span class="ind-nr-title">Healthcare &amp; Polyclinics</span>
+                <span class="ind-nr-sub">DOH Licensed · Patient Portals · EMR Integration</span>
+              </div>
+              <svg class="ind-nr-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/industries" class="ind-nr rv">
+              <span class="ind-nr-num">05</span>
+              <div class="ind-nr-body">
+                <span class="ind-nr-title">Higher Education &amp; LMS</span>
+                <span class="ind-nr-sub">SCORM · Apple Pay · Bilingual RTL · 10K+ Learners</span>
+              </div>
+              <svg class="ind-nr-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/industries" class="ind-nr rv">
+              <span class="ind-nr-num">06</span>
+              <div class="ind-nr-body">
+                <span class="ind-nr-title">Professional &amp; Legal Advisory</span>
+                <span class="ind-nr-sub">Document AI · Case Portals · Secure Client Vaults</span>
+              </div>
+              <svg class="ind-nr-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 9: PORTFOLIO / CASE STUDIES -->
+    <!-- SECTION 9: PORTFOLIO / CASE STUDIES    <!-- SECTION 9: PORTFOLIO — EDITORIAL CASE STUDY ROWS -->
     <section class="sec" id="portfolio">
       <div class="wrap">
         <div class="sec-head">
-          <div class="eyebrow">Proven Engineering</div>
-          <h2>Verified Client Case Studies</h2>
-          <p>Real platforms delivering verified commercial results across Dubai and the UAE.</p>
+          <div class="eyebrow">Client Engineering Impact</div>
+          <h2>Real Projects.<br>Measurable Results.</h2>
+          <p>Selected case studies from TOCO Technologies engagements across Dubai and the GCC.</p>
         </div>
-        <div class="grid-3">
-          <div class="card rv" style="padding:0;overflow:hidden;">
-            <img src="/assets/images/portfolio/ikart-erp.webp" alt="iKart Express ERP" width="600" height="340" style="width:100%;height:200px;object-fit:cover;border-bottom:1px solid var(--line);">
-            <div style="padding:22px;">
-              <span class="tag-badge live" style="margin-bottom:8px;">Logistics &amp; ERP</span>
-              <h3 style="font-size:18px;margin-bottom:8px;font-family:var(--font-display);color:var(--ink);">iKart Express Logistics ERP</h3>
-              <p style="font-size:13.5px;color:var(--ink-2);line-height:1.55;margin-bottom:12px;">
-                Custom dispatch console handling 15,000+ monthly deliveries with sub-minute route calculation and live GPS tracking.
-              </p>
-              <div style="font-size:12.5px;color:var(--cyan);font-weight:600;">✓ 65% faster dispatch velocity</div>
-            </div>
-          </div>
 
-          <div class="card rv" style="padding:0;overflow:hidden;">
-            <img src="/assets/images/portfolio/moj-ecommerce.webp" alt="MŌJ Perfume E-Commerce" width="600" height="340" style="width:100%;height:200px;object-fit:cover;border-bottom:1px solid var(--line);">
-            <div style="padding:22px;">
-              <span class="tag-badge live" style="margin-bottom:8px;">Luxury E-Commerce</span>
-              <h3 style="font-size:18px;margin-bottom:8px;font-family:var(--font-display);color:var(--ink);">MŌJ Luxury Fragrance Storefront</h3>
-              <p style="font-size:13.5px;color:var(--ink-2);line-height:1.55;margin-bottom:12px;">
-                High-converting digital perfume boutique with Tabby installment checkout, 0.7s load times, and automated VAT invoices.
-              </p>
-              <div style="font-size:12.5px;color:var(--cyan);font-weight:600;">✓ +42% mobile conversion lift</div>
+        <div class="cs-row-list">
+          <!-- iKart -->
+          <a href="/portfolio" class="cs-row rv">
+            <div class="cs-row-index">01</div>
+            <div class="cs-row-body">
+              <div class="cs-row-meta">
+                <span class="cs-row-cat">Logistics ERP &amp; Dispatch</span>
+                <span class="cs-row-metric">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  15,000+ orders automated
+                </span>
+              </div>
+              <h3 class="cs-row-title">iKart Express — Multi-Courier ERP</h3>
+              <p class="cs-row-desc">Sub-minute automated routing and live GPS driver tracking across all 7 Emirates, eliminating 100% of manual dispatch.</p>
+              <div class="cs-row-tags"><span>Fleet Engine</span><span>Next.js 14</span><span>PostgreSQL</span><span>Real-Time GPS</span></div>
             </div>
-          </div>
+            <div class="cs-row-img">
+              <img src="/assets/images/portfolio/ikart-erp.webp" alt="iKart Express Logistics ERP" width="420" height="240" loading="lazy">
+            </div>
+          </a>
 
-          <div class="card rv" style="padding:0;overflow:hidden;">
-            <img src="/assets/images/portfolio/globaledge-platform.webp" alt="GlobalEdge Platform" width="600" height="340" style="width:100%;height:200px;object-fit:cover;border-bottom:1px solid var(--line);">
-            <div style="padding:22px;">
-              <span class="tag-badge live" style="margin-bottom:8px;">Enterprise Web</span>
-              <h3 style="font-size:18px;margin-bottom:8px;font-family:var(--font-display);color:var(--ink);">GlobalEdge International Suite</h3>
-              <p style="font-size:13.5px;color:var(--ink-2);line-height:1.55;margin-bottom:12px;">
-                Scalable corporate web platform engineered for high concurrency, multi-language localization, and sub-second global speeds.
-              </p>
-              <div style="font-size:12.5px;color:var(--cyan);font-weight:600;">✓ Core Web Vitals score of 98</div>
+          <!-- MŌJ -->
+          <a href="/portfolio" class="cs-row rv">
+            <div class="cs-row-index">02</div>
+            <div class="cs-row-body">
+              <div class="cs-row-meta">
+                <span class="cs-row-cat">Luxury Commerce &amp; D2C</span>
+                <span class="cs-row-metric">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  +42% mobile checkout lift
+                </span>
+              </div>
+              <h3 class="cs-row-title">MŌJ Luxury Fragrance Storefront</h3>
+              <p class="cs-row-desc">High-converting perfume boutique with sub-700ms page loads, Tabby installment checkout, and seamless Arabic RTL support.</p>
+              <div class="cs-row-tags"><span>Headless Shopify</span><span>Tabby 4-Pay</span><span>Arabic RTL</span><span>Cloudflare Edge</span></div>
             </div>
-          </div>
+            <div class="cs-row-img">
+              <img src="/assets/images/portfolio/moj-ecommerce.webp" alt="MŌJ Perfume E-Commerce" width="420" height="240" loading="lazy">
+            </div>
+          </a>
+
+          <!-- GlobalEdge -->
+          <a href="/portfolio" class="cs-row rv">
+            <div class="cs-row-index">03</div>
+            <div class="cs-row-body">
+              <div class="cs-row-meta">
+                <span class="cs-row-cat">Enterprise Corporate Web</span>
+                <span class="cs-row-metric">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  98/100 Core Web Vitals
+                </span>
+              </div>
+              <h3 class="cs-row-title">GlobalEdge International Suite</h3>
+              <p class="cs-row-desc">Scalable corporate web platform engineered for high-concurrency enterprise traffic, multi-language localization, and sub-second global edge performance.</p>
+              <div class="cs-row-tags"><span>Static Edge</span><span>Enterprise SEO</span><span>Zero Bloat</span><span>WCAG A11y</span></div>
+            </div>
+            <div class="cs-row-img">
+              <img src="/assets/images/portfolio/globaledge-platform.webp" alt="GlobalEdge Platform" width="420" height="240" loading="lazy">
+            </div>
+          </a>
         </div>
-        <div style="text-align:center;margin-top:32px;">
+
+        <div style="text-align:center;margin-top:40px;">
           <a href="/portfolio" class="btn btn-ghost">
-            <span>View All Client Case Studies</span>
+            <span>View All Case Studies</span>
             <svg class="arr" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 10: PROCESS TIMELINE (EDITORIAL STRUCTURE BASED ON DESIGN REFERENCE) -->
-    <section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);" id="methodology">
+    <!-- SECTION 10: PROCESS TIMELINE    <!-- SECTION 10: PROCESS TIMELINE (MINIMAL EDITORIAL) -->
+    <section class="sec process-split-sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0;" id="methodology">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="eyebrow">Proven Methodology</div>
-          <h2>Our 4-Phase Delivery Framework</h2>
-          <p>Transparent milestones, weekly sprint updates, and rigorous quality assurance at every stage.</p>
+        <div class="sec-head" style="margin-bottom:28px;">
+          <div class="eyebrow">Delivery Process</div>
+          <h2 style="font-size:clamp(24px, 2.6vw, 32px);letter-spacing:-0.02em;margin-bottom:0;">How We Build &amp; Ship</h2>
         </div>
 
         <div class="editorial-framework rv">
           <!-- Top Border & Column Headers -->
           <div class="framework-header">
             <div class="f-head-col left">
-              <span class="f-col-title">Design</span>
-              <span class="f-col-meta">Before the build &bull; 05</span>
+              <span class="f-col-title">Design &amp; Architecture</span>
+              <span class="f-col-meta">04</span>
             </div>
             <div class="f-head-col right">
-              <span class="f-col-meta">05 &bull; After the file</span>
-              <span class="f-col-title">Production</span>
+              <span class="f-col-meta">04</span>
+              <span class="f-col-title">Engineering &amp; Launch</span>
             </div>
           </div>
 
@@ -2183,86 +2330,40 @@ def build_homepage():
             <!-- Left Column: Design / Pre-Build -->
             <div class="f-col left">
               <div class="f-item">
-                <span class="f-idx">d.1</span>
-                <div class="f-text">
-                  <span class="f-name">UI/UX design</span>
-                  <small class="f-sub">Phase 01 &bull; Strategic operational scoping, user personas &amp; workflow architecture in Port Saeed</small>
-                </div>
+                <span class="f-idx">01</span>
+                <span class="f-name">Scoping &amp; Architecture</span>
               </div>
-
               <div class="f-item">
-                <span class="f-idx">d.2</span>
-                <div class="f-text">
-                  <span class="f-name">Design systems</span>
-                  <small class="f-sub">Phase 02 &bull; Atomic design tokens, reusable component hierarchies &amp; brand guidelines</small>
-                </div>
+                <span class="f-idx">02</span>
+                <span class="f-name">UI/UX Prototyping</span>
               </div>
-
               <div class="f-item">
-                <span class="f-idx">d.3</span>
-                <div class="f-text">
-                  <span class="f-name">Brand identity</span>
-                  <small class="f-sub">Phase 02 &bull; Digital brand assets, vector iconography &amp; visual design styling</small>
-                </div>
+                <span class="f-idx">03</span>
+                <span class="f-name">Design Systems</span>
               </div>
-
               <div class="f-item">
-                <span class="f-idx">d.4</span>
-                <div class="f-text">
-                  <span class="f-name">Prototyping</span>
-                  <small class="f-sub">Phase 02 &bull; High-fidelity clickable wireframes &amp; verified user journey maps</small>
-                </div>
-              </div>
-
-              <div class="f-item">
-                <span class="f-idx">d.5</span>
-                <div class="f-text">
-                  <span class="f-name">Motion &amp; accessibility</span>
-                  <small class="f-sub">Phase 02 &bull; Smooth micro-interactions, WCAG AA contrast &amp; screen reader validation</small>
-                </div>
+                <span class="f-idx">04</span>
+                <span class="f-name">API &amp; Integration Specs</span>
               </div>
             </div>
 
             <!-- Right Column: Production / Engineering -->
             <div class="f-col right">
               <div class="f-item is-right">
-                <div class="f-text">
-                  <span class="f-name">Next.js and clean code</span>
-                  <small class="f-sub">Phase 03 &bull; Modular sprint engineering, clean code principles &amp; CI/CD builds</small>
-                </div>
-                <span class="f-idx">p.1</span>
+                <span class="f-name">Clean-Code Sprints</span>
+                <span class="f-idx">05</span>
               </div>
-
               <div class="f-item is-right">
-                <div class="f-text">
-                  <span class="f-name">Design systems in code</span>
-                  <small class="f-sub">Phase 03 &bull; Token-driven CSS, responsive layout grids &amp; zero-dependency UI components</small>
-                </div>
-                <span class="f-idx">p.2</span>
+                <span class="f-name">ERP &amp; Database Sync</span>
+                <span class="f-idx">06</span>
               </div>
-
               <div class="f-item is-right">
-                <div class="f-text">
-                  <span class="f-name">ERP &amp; API integrations</span>
-                  <small class="f-sub">Phase 03 &bull; Bidirectional REST APIs, webhook listeners &amp; database synchronization</small>
-                </div>
-                <span class="f-idx">p.3</span>
+                <span class="f-name">Automated QA Audits</span>
+                <span class="f-idx">07</span>
               </div>
-
               <div class="f-item is-right">
-                <div class="f-text">
-                  <span class="f-name">AI features &amp; agents</span>
-                  <small class="f-sub">Phase 03 &bull; Custom LLM pipelines, autonomous workflow agents &amp; human-in-the-loop gates</small>
-                </div>
-                <span class="f-idx">p.4</span>
-              </div>
-
-              <div class="f-item is-right">
-                <div class="f-text">
-                  <span class="f-name">Performance and launch</span>
-                  <small class="f-sub">Phase 04 &bull; Zero-downtime deployment, staff onboarding &amp; 30-day engineering warranty</small>
-                </div>
-                <span class="f-idx">p.5</span>
+                <span class="f-name">Production &amp; 30-Day SLA</span>
+                <span class="f-idx">08</span>
               </div>
             </div>
           </div>
@@ -2270,10 +2371,10 @@ def build_homepage():
           <!-- Bottom Footer Bar -->
           <div class="framework-footer">
             <a href="/contact" class="f-foot-link">
-              <span>Read how this site was made</span>
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Get project roadmap</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <span class="f-foot-meta">Phase 01 through Phase 04 &bull; Staged delivery with guaranteed SLA</span>
+            <span class="f-foot-meta">3 to 6 weeks delivery SLA</span>
           </div>
         </div>
       </div>

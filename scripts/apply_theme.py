@@ -20,12 +20,12 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Section palettes per page type (in document order, excluding the hero).
 HOME = [
-    "light",  # client logo marquee
-    "light",  # what we build
-    "dark",   # AI working inside your business (CSS mockups)
-    "alt",    # products showcase
-    "light",  # where to begin
-    "blue",   # stats counters
+    "light",  # client logo marquee (crisp clean white background, no boxes)
+    "dark",   # what we build (high-tech dark bento grid)
+    "light",  # AI working inside your business (white contrast)
+    "alt",    # products showcase (soft grey)
+    "dark",   # where to begin
+    "blue",   # stats counters (royal blue band)
     "light",  # industries chips
     "alt",    # portfolio
     "dark",   # process timeline
