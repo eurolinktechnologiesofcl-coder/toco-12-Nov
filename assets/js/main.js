@@ -497,4 +497,36 @@
     });
   }
 
+  /* --------------------------------------------------------------------------
+     12. Interactive Cursor-Following Footer Glow (Backend Ambient Light)
+     -------------------------------------------------------------------------- */
+  const footerElement = document.querySelector('footer.footer, footer');
+  if (footerElement) {
+    let ticking = false;
+
+    footerElement.addEventListener('mousemove', function (e) {
+      const rect = footerElement.getBoundingClientRect();
+      const x = Math.round(e.clientX - rect.left);
+      const y = Math.round(e.clientY - rect.top);
+
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          footerElement.style.setProperty('--footer-x', x + 'px');
+          footerElement.style.setProperty('--footer-y', y + 'px');
+          footerElement.style.setProperty('--footer-glow-opacity', '1');
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    footerElement.addEventListener('mouseenter', function () {
+      footerElement.style.setProperty('--footer-glow-opacity', '1');
+    });
+
+    footerElement.addEventListener('mouseleave', function () {
+      footerElement.style.setProperty('--footer-glow-opacity', '0.75');
+    });
+  }
+
 })();

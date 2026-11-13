@@ -2156,42 +2156,124 @@ def build_homepage():
       </div>
     </section>
 
-    <!-- SECTION 10: PROCESS TIMELINE (Discover, Design, Develop, Launch) -->
-    <section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <!-- SECTION 10: PROCESS TIMELINE (EDITORIAL STRUCTURE BASED ON DESIGN REFERENCE) -->
+    <section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);" id="methodology">
       <div class="wrap">
         <div class="sec-head">
           <div class="eyebrow">Proven Methodology</div>
           <h2>Our 4-Phase Delivery Framework</h2>
           <p>Transparent milestones, weekly sprint updates, and rigorous quality assurance at every stage.</p>
         </div>
-        <div class="grid-4">
-          <div class="card step-card rv">
-            <div class="step-num">Phase 01</div>
-            <h3 style="font-size:19px;margin-bottom:8px;font-family:var(--font-display);">Strategic Discovery</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;">
-              Deep operational scoping, database modeling, and technical specification signed off in Port Saeed, Dubai.
-            </p>
+
+        <div class="editorial-framework rv">
+          <!-- Top Border & Column Headers -->
+          <div class="framework-header">
+            <div class="f-head-col left">
+              <span class="f-col-title">Design</span>
+              <span class="f-col-meta">Before the build &bull; 05</span>
+            </div>
+            <div class="f-head-col right">
+              <span class="f-col-meta">05 &bull; After the file</span>
+              <span class="f-col-title">Production</span>
+            </div>
           </div>
-          <div class="card step-card rv">
-            <div class="step-num">Phase 02</div>
-            <h3 style="font-size:19px;margin-bottom:8px;font-family:var(--font-display);">UI/UX Prototyping</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;">
-              Figma design tokens, interactive clickable wireframes, and WCAG AA accessibility verification.
-            </p>
+
+          <!-- Split Body with Hairline Center Divider -->
+          <div class="framework-body">
+            <!-- Left Column: Design / Pre-Build -->
+            <div class="f-col left">
+              <div class="f-item">
+                <span class="f-idx">d.1</span>
+                <div class="f-text">
+                  <span class="f-name">UI/UX design</span>
+                  <small class="f-sub">Phase 01 &bull; Strategic operational scoping, user personas &amp; workflow architecture in Port Saeed</small>
+                </div>
+              </div>
+
+              <div class="f-item">
+                <span class="f-idx">d.2</span>
+                <div class="f-text">
+                  <span class="f-name">Design systems</span>
+                  <small class="f-sub">Phase 02 &bull; Atomic design tokens, reusable component hierarchies &amp; brand guidelines</small>
+                </div>
+              </div>
+
+              <div class="f-item">
+                <span class="f-idx">d.3</span>
+                <div class="f-text">
+                  <span class="f-name">Brand identity</span>
+                  <small class="f-sub">Phase 02 &bull; Digital brand assets, vector iconography &amp; visual design styling</small>
+                </div>
+              </div>
+
+              <div class="f-item">
+                <span class="f-idx">d.4</span>
+                <div class="f-text">
+                  <span class="f-name">Prototyping</span>
+                  <small class="f-sub">Phase 02 &bull; High-fidelity clickable wireframes &amp; verified user journey maps</small>
+                </div>
+              </div>
+
+              <div class="f-item">
+                <span class="f-idx">d.5</span>
+                <div class="f-text">
+                  <span class="f-name">Motion &amp; accessibility</span>
+                  <small class="f-sub">Phase 02 &bull; Smooth micro-interactions, WCAG AA contrast &amp; screen reader validation</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Production / Engineering -->
+            <div class="f-col right">
+              <div class="f-item is-right">
+                <div class="f-text">
+                  <span class="f-name">Next.js and clean code</span>
+                  <small class="f-sub">Phase 03 &bull; Modular sprint engineering, clean code principles &amp; CI/CD builds</small>
+                </div>
+                <span class="f-idx">p.1</span>
+              </div>
+
+              <div class="f-item is-right">
+                <div class="f-text">
+                  <span class="f-name">Design systems in code</span>
+                  <small class="f-sub">Phase 03 &bull; Token-driven CSS, responsive layout grids &amp; zero-dependency UI components</small>
+                </div>
+                <span class="f-idx">p.2</span>
+              </div>
+
+              <div class="f-item is-right">
+                <div class="f-text">
+                  <span class="f-name">ERP &amp; API integrations</span>
+                  <small class="f-sub">Phase 03 &bull; Bidirectional REST APIs, webhook listeners &amp; database synchronization</small>
+                </div>
+                <span class="f-idx">p.3</span>
+              </div>
+
+              <div class="f-item is-right">
+                <div class="f-text">
+                  <span class="f-name">AI features &amp; agents</span>
+                  <small class="f-sub">Phase 03 &bull; Custom LLM pipelines, autonomous workflow agents &amp; human-in-the-loop gates</small>
+                </div>
+                <span class="f-idx">p.4</span>
+              </div>
+
+              <div class="f-item is-right">
+                <div class="f-text">
+                  <span class="f-name">Performance and launch</span>
+                  <small class="f-sub">Phase 04 &bull; Zero-downtime deployment, staff onboarding &amp; 30-day engineering warranty</small>
+                </div>
+                <span class="f-idx">p.5</span>
+              </div>
+            </div>
           </div>
-          <div class="card step-card rv">
-            <div class="step-num">Phase 03</div>
-            <h3 style="font-size:19px;margin-bottom:8px;font-family:var(--font-display);">Sprint Engineering</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;">
-              Agile development using clean code principles, automated unit testing, and continuous deployment builds.
-            </p>
-          </div>
-          <div class="card step-card rv">
-            <div class="step-num">Phase 04</div>
-            <h3 style="font-size:19px;margin-bottom:8px;font-family:var(--font-display);">Production &amp; SLA</h3>
-            <p style="font-size:14px;color:var(--ink-2);line-height:1.6;">
-              Zero-downtime deployment, staff onboarding, and 30 consecutive calendar days of engineering warranty.
-            </p>
+
+          <!-- Bottom Footer Bar -->
+          <div class="framework-footer">
+            <a href="/contact" class="f-foot-link">
+              <span>Read how this site was made</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <span class="f-foot-meta">Phase 01 through Phase 04 &bull; Staged delivery with guaranteed SLA</span>
           </div>
         </div>
       </div>
